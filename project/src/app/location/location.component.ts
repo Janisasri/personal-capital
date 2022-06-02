@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup,FormBuilder,AbstractControl } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { DaoserviceService } from '../daoservice.service';
-import { data } from 'jquery';
+
 
 @Component({
   selector: 'app-location',
@@ -25,10 +25,7 @@ export class LocationComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {
-
-    
-  }
+  ngOnInit(): void {}
   get Location() {
     return this.locationRecord.get('Location')!;
   }

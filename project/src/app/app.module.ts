@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { LogoComponent } from './logo/logo.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HomepageComponent } from './homepage/homepage.component';
-import { WealthComponent } from './wealth/wealth.component';
 import { StartedformComponent } from './startedform/startedform.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -14,7 +13,6 @@ import { AddinfoComponent } from './addinfo/addinfo.component';
 import { InvestinfoComponent } from './investinfo/investinfo.component';
 import { CarddetailsComponent } from './carddetails/carddetails.component';
 import { LocationComponent } from './location/location.component';
-import { SavingComponent } from './saving/saving.component';
 import { ViewdetailsComponent } from './viewdetails/viewdetails.component';
 import { InvesterComponent } from './invester/invester.component';
 import { LearnComponent } from './learn/learn.component';
@@ -28,14 +26,12 @@ import { CommonModule } from '@angular/common';
     AppComponent,
     LogoComponent,
     HomepageComponent,
-    WealthComponent,
     StartedformComponent,
     DashboardComponent,
     AddinfoComponent,
     InvestinfoComponent,
     CarddetailsComponent,
     LocationComponent,
-    SavingComponent,
     ViewdetailsComponent,
     InvesterComponent,
     LearnComponent,

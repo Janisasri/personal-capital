@@ -105,7 +105,6 @@ getRecordFromId(id){
 }
 getAllData(info:Array<string>){
   console.log(info)
-  // const url=`${this.url}personal-capital/_all_docs?include_docs=true&keys=[${info}]`;
   const url = `https://b4af4ef2-55e1-4a9b-9b02-8168e5964652-bluemix.cloudant.com/personal-capital/_all_docs?include_docs=true&keys=["`+info.join('","')+`"]`
  
   return this.http.get(url,this.httpOptions);

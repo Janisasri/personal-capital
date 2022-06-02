@@ -10,7 +10,6 @@ import { InvestinfoComponent } from './investinfo/investinfo.component';
 import { LearnComponent } from './learn/learn.component';
 import { StartedformComponent } from './startedform/startedform.component';
 import { ViewdetailsComponent } from './viewdetails/viewdetails.component';
-import { SavingComponent } from './saving/saving.component';
 
 
 
@@ -27,7 +26,6 @@ const routes: Routes = [
   { path:'viewdetails',component:ViewdetailsComponent},
   { path:'investgo',component:InvesterComponent},
   { path:'learn',component:LearnComponent},
-  { path:'saving',component:SavingComponent},
   { path:'Investinfo',component:InvestinfoComponent},
   { path:'CardInfo',component:CarddetailsComponent},
   { path:'view',component:ViewdetailsComponent},

@@ -34,14 +34,7 @@ lookupIdArray=[]
         this.alluser =  datas.map(item => item.doc)
         this.lookupIdArray = lodash.uniq(this.alluser.map(item => item['locationInfo']))
         
-        // datas.map(item => {
-        //   console.log(item);
-        //   if(item.doc?.['city_locationInfo']){
-        //   this.lookupIdArray.push(item.doc?.['city_locationInfo'].toString())
-        //   }
-        //   this.alluser.push(item.doc);
-        //   console.log(this.lookupIdArray)
-        // });
+       
         this.svc.getAllData(this.lookupIdArray).subscribe((res:any)=>{
           const lookupData = res.rows.map(el=>el.doc)
           this.alluser.forEach(element => {
@@ -71,9 +64,7 @@ lookupIdArray=[]
  }
 
     
-  ngOnInit(): void {
-
-  }
+  ngOnInit(): void {}
  
   
 }
