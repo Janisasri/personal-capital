@@ -1,0 +1,23 @@
+import { AbstractControl, ValidatorFn } from '@angular/forms';
+export default class validateremailId{
+  someServiceWorkingWithDatabase: any;
+  private validateremailId(): ValidatorFn {
+    return (control: AbstractControl): {[key: string]: any} => {
+      return this.someServiceWorkingWithDatabase.checkemailId(control)
+        .subscribe(
+          ({ data }) => {
+            let res: string = data;
+            if (res === control.value) {
+              return { 'alreadyExist': true };
+            } else {
+              return null;
+            }
+          },
+          (error) => {
+            console.log(error);
+          }
+        );
+    }
+}
+
+}

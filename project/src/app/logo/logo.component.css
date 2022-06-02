@@ -1,0 +1,20 @@
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Oswald:wght@300&display=swap');
+.navbar-nav{
+  text-align: right;
+}
+.navbar .navbar-nav .nav-link {
+    color: cyan;
+    font-size: 1.1em;
+    padding-right: 1em;
+}
+.navbar .navbar-nav .nav-link:hover{
+    color: #808080;
+}
+.btn {
+  background-color: cyan;
+  color: black;
+  text-align: right;
+  float: right;
+  margin-left: 800px;
+}
