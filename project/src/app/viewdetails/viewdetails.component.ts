@@ -35,13 +35,13 @@ lookupIdArray=[]
         this.lookupIdArray = lodash.uniq(this.alluser.map(item => item['locationInfo']))
         
        
-        this.svc.getAllData(this.lookupIdArray).subscribe((res:any)=>{
-          const lookupData = res.rows.map(el=>el.doc)
+        this.svc.getAllData(this.lookupIdArray).subscribe((ress:any)=>{
+          const lookupData = ress.rows.map(el=>el.doc)
           this.alluser.forEach(element => {
             const location = lookupData.filter(el=>el['_id'] === element['locationInfo'])[0]
             element['Location'] = location['Location']
           });
-          console.log(res)
+          console.log(ress)
         })
         },rej=>{
         alert("opps! No records on viewdata"+rej);
