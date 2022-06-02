@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup,Validators,AbstractControl,FormControlName } from '@angular/forms';
+import { FormBuilder, FormGroup,Validators,AbstractControl} from '@angular/forms';
 import { DaoserviceService } from '../daoservice.service';
 
 @Component({
@@ -102,7 +102,7 @@ export class CarddetailsComponent implements OnInit {
   console.log("from form", Formvalue);
   this.api.addData(Formvalue).subscribe((data) => {
     console.log("data returned from server", data);
-    // Formvalue.reset();
+   
 })
 }catch(err:any){
     

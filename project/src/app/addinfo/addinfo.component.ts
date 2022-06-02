@@ -112,11 +112,7 @@ export class AddinfoComponent implements OnInit {
     return this.addinfo.controls;
    }
 
-  //Reset Function//
-  // onReset():void {
-  //   this.submitted=false;
-  //   this.addinfo.reset();
-  // }
+ 
   
   //Posting data to CouchDB//
 onSubmit(Formvalue: any) {
