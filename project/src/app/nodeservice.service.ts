@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders,HttpParams} from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { HttpClient} from '@angular/common/http';
+
 
 @Injectable({
  providedIn: 'root'
@@ -10,7 +10,7 @@ export class nodeservice {
   public userId = this.userData.id
 
  constructor(private http: HttpClient) {}
-    storedata(FormData :any) {
+    UserData(FormData :any) {
       return this.http.post<any>('http://localhost:8000/postdata/', FormData);
     }
     test_get(id:any)

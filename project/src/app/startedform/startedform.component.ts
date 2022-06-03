@@ -73,7 +73,7 @@ export class StartedformComponent implements OnInit {
     onSubmit(Formvalue:any): void {
 
       console.log("from form",Formvalue);
-      this.api.storedata(Formvalue).subscribe((data) => {
+      this.api.UserData(Formvalue).subscribe((data) => {
         console.log("data returned from server",data);
       })
       this.submitted=true;

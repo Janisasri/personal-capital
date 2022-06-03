@@ -67,6 +67,20 @@ export class DaoserviceService {
   return this.http.post<any>(this.url +'personal-capital',data1,this.httpOptions)
 }
 
+UserData(formData: any) {
+  console.log("From api", formData);
+  let data5 ={
+    "fullName": formData['fullName'],
+    "Username": formData['Username'],
+    "emailId": formData['emailId'],
+    "Password": formData['Password'],
+    "Confirmpassword": formData['Confirmpassword'],
+    "type": "UserInfo",
+    "user_id":this.userId
+}
+return this.http.post<any>(this.url +'personal-capital',data5,this.httpOptions)
+}
+
 //InvestInfo Component Type and UserID//
   investAdd(formData: any) {
     console.log("From api", formData);
