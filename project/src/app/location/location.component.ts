@@ -25,7 +25,9 @@ export class LocationComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    console.log("Hello");
+  }
   get Location() {
     return this.locationRecord.get('Location')!;
   }

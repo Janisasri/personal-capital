@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { nodeservice } from '../nodeservice.service';
 import { FormBuilder, FormGroup,Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { data } from 'jquery';
 import { DaoserviceService } from '../daoservice.service';
 import { ToastrService } from 'ngx-toastr';
@@ -31,8 +31,11 @@ export class HomepageComponent implements OnInit {
     };
     
     
-  constructor(private fb:FormBuilder,private api:nodeservice,private router:Router,private Daoservice:DaoserviceService,private toastr: ToastrService) { }
-
+  constructor(private fb:FormBuilder,private api:nodeservice,private router:Router,private Daoservice:DaoserviceService,public activatedRoute:ActivatedRoute,private toastr: ToastrService) { 
+this.activatedRoute.queryParams.subscribe(res => {
+  console.log("UserDAta",res)
+})
+  }
   ngOnInit(): void {
     this.loginform =  this.fb.group({
      
@@ -57,8 +60,6 @@ export class HomepageComponent implements OnInit {
      this.Daoservice.login(selector).subscribe((response:any)=>{
        console.log(response)
        if(response.docs.length<=0){
-      this.toastr.warning('invalid credentials','login failed')
-      return;
        }
        
        let data = response['docs'][0]
@@ -97,6 +98,6 @@ export class HomepageComponent implements OnInit {
  let userData = JSON.parse(localStorage.getItem('obj1'))
  console.log("obj1 object:", userData);
   console.log("object id:",userData.id);
-
+  
 }
 }

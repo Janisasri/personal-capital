@@ -64,7 +64,9 @@ lookupIdArray=[]
  }
 
     
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    console.log("Hello");
+  }
  
   
 }

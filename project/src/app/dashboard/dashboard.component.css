@@ -1,10 +1,3 @@
-/* :root {
-  --main-bg-color: black;
-  --main-text-color: cyan;
-  --second-text-color: #bbbec5;
-  --second-bg-color: #c1efde;
-} */
-
 .primary-text {
   color: black;
 }
@@ -47,12 +40,7 @@ background: linear-gradient(90deg, rgba(28,27,33,0.9416141456582633) 0%, rgba(9,
   -moz-transition: margin 0.25s ease-out;
   -o-transition: margin 0.25s ease-out;
   transition: margin 0.25s ease-out;
-  /* background: rgb(28,27,33);
-  background: linear-gradient(90deg, rgba(28,27,33,0.9416141456582633) 0%, rgba(9,121,105,1) 35%, rgba(0,241,255,1) 100%); */
   color: black;
-  
-/* background: rgb(28,27,33);
-background: linear-gradient(180deg, rgba(28,27,33,0.9416141456582633) 0%, rgba(9,121,105,1) 35%, rgba(0,241,255,1) 100%); */
 }
 #sidebar-wrapper .sidebar-heading {
   padding: 0.875rem 1.25rem;
@@ -87,9 +75,7 @@ background: linear-gradient(180deg, rgba(28,27,33,0.9416141456582633) 0%, rgba(9
   color: var(--main-text-color);
   font-weight: bold;
   border: none;
-  /* background: rgb(28,27,33);
-  background: linear-gradient(90deg, rgba(28,27,33,0.9416141456582633) 0%, rgba(9,121,105,1) 35%, rgba(0,241,255,1) 100%); */
-  color: black;
+  /* color: black; */
 }
 
 @media (min-width: 768px) {

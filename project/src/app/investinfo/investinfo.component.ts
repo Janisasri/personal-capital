@@ -28,7 +28,9 @@ export class InvestinfoComponent implements OnInit {
     });
    }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    console.log("Hello");
+  }
   get Plan() {
     return this.investRecord.get('Plan')!;
   }
