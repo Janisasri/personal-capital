@@ -168,6 +168,8 @@
   width: 300px;
   height: 300px;
   perspective: 1000px;
+  border-radius: 40px;
+  
 }
 
 .flip-card-inner {
@@ -224,16 +226,6 @@
 .head_6 {
   font-size: 25px;
 }
-
-
-.flip-card {
-  border-radius: 40px;
-}
-/* Create two equal columns that floats next to each other */
-
-
-/* Clear floats after the columns */
-
 .line {
   color: cyan;
   border: 20px;

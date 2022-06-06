@@ -24,8 +24,7 @@ export class ViewdetailsComponent implements OnInit {
 
  
   constructor(private svc:DaoserviceService) {
-    // this. userData = JSON.parse(localStorage.getItem('obj1') || '{}')
-    // this. userId = this.userData.id ||''
+   
     this.fetchAdditionalDetails();
    }
   
