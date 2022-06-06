@@ -1,6 +1,6 @@
 body
 {
-      background-color: #181828;
+     
       background: linear-gradient(to bottom, #000428, #004683);
       animation: background-color 20s;
       min-height: 100vh;
