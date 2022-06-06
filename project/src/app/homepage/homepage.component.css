@@ -43,7 +43,11 @@
   }
   .card {
     background-color: black;
-  }
+    background-color: white;
+    padding: 20px;
+    margin-top: 20px;
+   }
+  
   
   
   .row row-cols-1 row-cols-md-2 g-4 {
@@ -97,11 +101,7 @@
 }
 
 /* Add a card effect for articles */
-.card {
-   background-color: white;
-   padding: 20px;
-   margin-top: 20px;
-}
+
 
 /* Clear floats after the columns */
 .row:after {
@@ -144,6 +144,7 @@
 
 .para {
   color: cyan;
+  font-size: large;
 }
 .btn1 {
   border-radius: 10px;
@@ -152,9 +153,7 @@
   padding: 10px;
   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
-.para {
-  color: cyan;
-}
+
 .flip-card {
   background-color: transparent;
   width: 300px;
@@ -243,9 +242,7 @@
 .heading {
   color: cyan;
 }
-.para {
-  color: cyan;
-}
+
 .btn {
   border-radius: 10px;
   background-color: cyan;
@@ -261,9 +258,7 @@
   color: cyan;
   
 }
-.para {
-  font-size: large;
-}
+
 
 div.social{
   text-align: center;
@@ -341,6 +336,3 @@ margin-top: 15px;
 background:black;
 padding: 7px 0;
 color: cyan; }
-/* footer.nb-footer .copyright p {
-margin: 0;
-padding: 0; } */
