@@ -3,6 +3,7 @@ import { FormGroup,Validators,AbstractControl, FormBuilder} from '@angular/forms
 import { DaoserviceService } from '../daoservice.service';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 
 @Component({
@@ -37,7 +38,7 @@ export class AddinfoComponent implements OnInit {
   idValue: any;
   val: any;
   
-  constructor(private fb:FormBuilder,private api:DaoserviceService, private http:HttpClient,private router:Router) {
+  constructor(private fb:FormBuilder,private api:DaoserviceService, private http:HttpClient,private router:Router,private toastr: ToastrService) {
      this.fetchlocationdetails();
      
      this.addinfo=this.fb.group({
@@ -116,22 +117,30 @@ export class AddinfoComponent implements OnInit {
   
   //Posting data to CouchDB//
 onSubmit(Formvalue: any) {
+  try{
   console.log("from form", Formvalue);
   this.api.storeData(Formvalue).subscribe((data) => {
     console.log("data returned from server", data);
     Formvalue.reset();
   })
+}catch(err:any){
+  this.toastr.error("Unable to submit the data",err.name);
   
+}
 }
 
 //Fetching Location lookup for location input fields//
 fetchlocationdetails(){
-
-  this.api.fetchData("locationInfo").subscribe(res =>{
+  const query = {
+    "selector": {
+       "type": "locationInfo"
+    }
+ }
+this.api.findApi(query).subscribe(res =>{
     console.log(res);
-    let datas= res['rows'];
+    let datas= this.alluser =  res['docs'];
     console.log(datas)
-    this.alluser = datas.map(item => item.doc);
+    
    
   })
 }

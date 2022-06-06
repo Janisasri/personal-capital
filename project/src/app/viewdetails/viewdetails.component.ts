@@ -16,7 +16,7 @@ export class ViewdetailsComponent implements OnInit {
   idValue: any;
   val: any;
        
-         //Local storage get item for type setting//
+  //Local storage get item for type setting//
   public userData = JSON.parse(localStorage.getItem('obj1') || '{}')
   public userId = this.userData.id
  
@@ -48,23 +48,8 @@ lookupIdArray=[]
         console.log(rej)
       });
    } 
-       //fetch the invest info for interpoliation concept//   
-   fetchInvestDetails(){
-    
-    this.svc.fetchData("investInfo").subscribe(res =>{
-      console.log(res);
-      let datas= res['rows'];
-      console.log(datas)
-     this.alluser =  datas.map(item => item.doc);
-
-      },rej=>{
-      alert("opps! No records on viewdata"+rej);
-      console.log(rej)
-    });
- }
-
-    
-  ngOnInit(): void {
+      //fetch the invest info for interpoliation concept//   
+   ngOnInit(): void {
     console.log("Hello");
   }
  

@@ -10,7 +10,7 @@ export class nodeservice {
   public userId = this.userData.id
 
  constructor(private http: HttpClient) {}
-    UserData(FormData :any) {
+    storedata(FormData :any) {
       return this.http.post<any>('http://localhost:8000/postdata/', FormData);
     }
     test_get(id:any)

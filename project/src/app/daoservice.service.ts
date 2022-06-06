@@ -123,7 +123,11 @@ getAllData(info:Array<string>){
  
   return this.http.get(url,this.httpOptions);
 }
-
+findApi(data){
+  const url = `https://b4af4ef2-55e1-4a9b-9b02-8168e5964652-bluemix.cloudant.com/personal-capital/_find`
+ 
+  return this.http.post(url,data,this.httpOptions);
+}
 login(selector){
   const url = `${this.url}personal-capital/_find`;
  

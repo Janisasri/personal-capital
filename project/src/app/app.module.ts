@@ -20,6 +20,9 @@ import { HttpCallInterceptor } from 'src/app/interceptor';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { CommonModule } from '@angular/common';
+import { DashboardcontentComponent } from './dashboardcontent/dashboardcontent.component';
+import { SavingplannerComponent } from './savingplanner/savingplanner.component';
+import { PersonalcapitalComponent } from './personalcapital/personalcapital.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +38,9 @@ import { CommonModule } from '@angular/common';
     ViewdetailsComponent,
     InvesterComponent,
     LearnComponent,
+    DashboardcontentComponent,
+    SavingplannerComponent,
+    PersonalcapitalComponent,
    
   ],
   imports: [

@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup,Validators,AbstractControl} from '@angular/forms';
 import { DaoserviceService } from '../daoservice.service';
-
+import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-carddetails',
   templateUrl: './carddetails.component.html',
@@ -33,7 +33,7 @@ export class CarddetailsComponent implements OnInit {
   idValue1: any;
   val1: any;
 
-  constructor(private fb:FormBuilder,private api:DaoserviceService,private http:HttpClient) {
+  constructor(private fb:FormBuilder,private api:DaoserviceService,private http:HttpClient,private toastr: ToastrService) {
     this.cardDetails=this.fb.group({
       PayeeName:[this.cardrecord.PayeeName],
       AccountNumber:[this.cardrecord. AccountNumber],
@@ -105,7 +105,7 @@ export class CarddetailsComponent implements OnInit {
    
 })
 }catch(err:any){
-    
+  this.toastr.error("Unable to submit the data",err.name);
 }
   }
 }

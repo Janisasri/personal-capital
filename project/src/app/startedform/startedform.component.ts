@@ -4,7 +4,7 @@ import  Validation from './utils/validation';
 import { nodeservice } from '../nodeservice.service';
 import { HttpClient } from '@angular/common/http';
 import { DaoserviceService } from '../daoservice.service';
-
+import { ToastrService } from 'ngx-toastr';
 
 
 @Component({
@@ -24,7 +24,7 @@ export class StartedformComponent implements OnInit {
     Confirmpassword:'',
 
    };
-  constructor(private fb:FormBuilder,private api:nodeservice, private http:HttpClient,private svc:DaoserviceService) { 
+  constructor(private fb:FormBuilder,private api:nodeservice, private http:HttpClient,private svc:DaoserviceService,private toastr:ToastrService) { 
 
     this.checkout=this.fb.group({
       fullName:[this.userRecord.fullName],
@@ -73,11 +73,13 @@ export class StartedformComponent implements OnInit {
     onSubmit(Formvalue:any): void {
 
       console.log("from form",Formvalue);
-      this.api.UserData(Formvalue).subscribe((data) => {
+      this.api.storedata(Formvalue).subscribe((data) => {
         console.log("data returned from server",data);
+      
       })
       this.submitted=true;
       if (this.checkout.invalid) {
+        this.toastr.error("Please Register Your Form");
         return;
       }
       console.log(JSON.stringify(this.checkout.value,null,2));

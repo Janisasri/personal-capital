@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup } from '@angular/forms';
 import { DaoserviceService } from '../daoservice.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-investinfo',
@@ -21,7 +22,7 @@ export class InvestinfoComponent implements OnInit {
   obj2: any;
   idValue2: any;
   val2: any;
-  constructor(private fb:FormBuilder,private svc:DaoserviceService,private http:HttpClient) {
+  constructor(private fb:FormBuilder,private svc:DaoserviceService,private http:HttpClient,private toastr: ToastrService) {
     this.investInfo=this.fb.group({
       Plan:[this.investRecord.Plan],
       text:[this.investRecord.text]
@@ -43,13 +44,16 @@ export class InvestinfoComponent implements OnInit {
 
   //Posting the data to CouchDB//
   onSubmit(Formvalue:any){
+    try{
     console.log("from form", Formvalue);
     this.svc.investAdd(Formvalue).subscribe((data) => {
       console.log("data returned from server", data);
       Formvalue.reset();
   
     })
-    
+  }catch(err:any){
+    this.toastr.error("Unable to submit the data",err.name);
+  }
   }
   
 }

@@ -260,9 +260,18 @@ border-bottom: 1px solid #999; */
   background: rgb(3,88,96);
   background: radial-gradient(circle, rgba(3,88,96,1) 0%, rgba(218,19,59,1) 100%);
 }
-.card {
- 
-} 
+.btn{
+  color: #000428;
+  background-color:rgb(3,88,96);
+  padding: 10px;
+  text-align: center;
+  align-items: center;
+}
+.buttons {
+  align-items: center;
+  margin: auto;
+  text-align: center;
+}
 
 
 
