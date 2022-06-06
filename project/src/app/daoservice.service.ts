@@ -8,6 +8,11 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 export class DaoserviceService {
   endpoint: string;
   temp: any;
+  userData:{
+    id:string
+  };
+  userId:any;
+
   pusharray: any = [];
   url = 'https://b4af4ef2-55e1-4a9b-9b02-8168e5964652-bluemix.cloudant.com/'
   dbUserName = 'apikey-v2-15a2mog1stn0kv0gjnidlq2eoth4psp58f8ov9zs42i6';
@@ -20,13 +25,11 @@ export class DaoserviceService {
     })
   };
   dataBaseName = "personal-capital"
-   
-  //Local Storage Get Item//
-  public userData = JSON.parse(localStorage.getItem('obj1'))
-  public userId = this.userData.id
-
+   constructor(private http: HttpClient) {
+    this. userData = JSON.parse(localStorage.getItem('obj1'))
+    //  this.userId = this.userData.id ||''
+  }
   
- constructor(private http: HttpClient) { }
 
  //AdditionalInfo Component Type and UserID//
   storeData(formData: any) {
@@ -44,7 +47,7 @@ export class DaoserviceService {
       "Postal": formData['Postal'],
       "checkbox": formData['checkbox'],
       "type": "additionalInfo",
-      "user_id":this.userId
+      "user_id":""
   }
     return this.http.post<any>(this.url +'personal-capital',data,this.httpOptions)
   }
@@ -62,24 +65,14 @@ export class DaoserviceService {
       "PhoneNumber": formData['PhoneNumber'],
       "TypeYourOwn": formData['TypeYourOwn'],
       "type": "cardInfo",
-      "user_id":this.userId
+      "user_id":""
   }
   return this.http.post<any>(this.url +'personal-capital',data1,this.httpOptions)
 }
 
-UserData(formData: any) {
-  console.log("From api", formData);
-  let data5 ={
-    "fullName": formData['fullName'],
-    "Username": formData['Username'],
-    "emailId": formData['emailId'],
-    "Password": formData['Password'],
-    "Confirmpassword": formData['Confirmpassword'],
-    "type": "UserInfo",
-    "user_id":this.userId
-}
-return this.http.post<any>(this.url +'personal-capital',data5,this.httpOptions)
-}
+
+    
+
 
 //InvestInfo Component Type and UserID//
   investAdd(formData: any) {
@@ -88,7 +81,7 @@ return this.http.post<any>(this.url +'personal-capital',data5,this.httpOptions)
       "Plan": formData['Plan'],
       "text": formData['text'],
       "type": "investInfo",
-      "user_id":this.userId
+      "user_id":""
   }
   return this.http.post<any>(this.url +'personal-capital',data2,this.httpOptions)
 }
@@ -101,7 +94,7 @@ LocationData(formData:any){
     "Location":formData['Location'],
     "Pincode":formData['Pincode'],
     "type":"locationInfo",
-    "user_id":this.userId
+    "user_id":""
   }
   return this.http.post<any>(this.url + 'personal-capital',data4,this.httpOptions)
 }
@@ -109,8 +102,7 @@ LocationData(formData:any){
 
  //Accessing all fetching data using type and userId//
 fetchData(info:any){
-  const url=this.url+'personal-capital/_design/sample1_docs/_view/addInfo?include_docs=true&keys=["'+ info+ this.userId + '"]';
- 
+  const url=this.url+'personal-capital/_design/sample1_docs/_view/addInfo?include_docs=true&keys=["'+ info+ "" + '"]';
   return this.http.get(url,this.httpOptions);
 }
 getRecordFromId(id){
@@ -128,10 +120,6 @@ findApi(data){
  
   return this.http.post(url,data,this.httpOptions);
 }
-login(selector){
-  const url = `${this.url}personal-capital/_find`;
+
+}
  
-  return this.http.post(url,selector,this.httpOptions);
-}
-}
-  

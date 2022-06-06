@@ -7,7 +7,6 @@
     flex-wrap: nowrap;
     
   }
-  
   .flex-container > div {
     
     width: 120px;
@@ -94,9 +93,5 @@
   background:black;
   padding: 7px 0;
   color: cyan; }
-  /* footer.nb-footer .copyright p {
-  margin: 0;
-  padding: 0; } */
-  .head {
-    color: cyan;
-  }
+ 
+  

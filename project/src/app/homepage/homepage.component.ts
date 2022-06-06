@@ -17,15 +17,7 @@ export class HomepageComponent implements OnInit {
     Password: '',
   };
 
-  //For Local Storage SetItem (Obj1)//
-  obj1: any = {
-    Username: '',
-    Password: '',
-    Confirmpassword: '',
-    emailId: '',
-    fullName: '',
-    _id: '',
-  };
+  
 
   constructor(
     private fb: FormBuilder,
@@ -35,9 +27,10 @@ export class HomepageComponent implements OnInit {
     public activatedRoute: ActivatedRoute,
     private toastr: ToastrService
   ) {
-    this.activatedRoute.queryParams.subscribe((res) => {
-      console.log('UserDAta', res);
-    });
+    this.loginform = this.fb.group({
+      emailId:[this.loginrecord.emailId],
+      Password:[this.loginrecord.Password]
+    })
   }
   ngOnInit(): void {
     this.loginform = this.fb.group({
@@ -52,47 +45,36 @@ export class HomepageComponent implements OnInit {
   get Password() {
     return this.loginform.get('Password')!;
   }
-  login(Formvalue: any) {
-    const selector = {
-      selector: {
-        emailId: Formvalue.emailId,
-        Password: Formvalue.Password,
-      },
-    };
-    this.Daoservice.login(selector).subscribe(
-      (response: any) => {
-        console.log(response);
-        if (response.docs.length <= 0) {
-          this.toastr.error('login failed');
-          return;
-        }
+  login(Formvalue:any) {
+    this.api.test_get(Formvalue.emailId).subscribe((data) => {
+      console.log("Data",data);
+      const userData ={data:JSON.stringify(data.docs[0]) }
+      localStorage.setItem('obj1',JSON.stringify(data.docs[0]))
 
-        let data = response['docs'][0];
-        localStorage.setItem('loggedInUser', data);
+      if (data.docs.length <= 0) {
+        this.toastr.error("Please Register");
+       
 
-        //Declaring our Fields in Array Format for Local Storage Purpose//
-        let datas = {
-          Confirmpassword: data.Confirmpassword,
-          Password: data.Password,
-          Username: data.Username,
-          emailId: data.emailId,
-          fullName: data.fullName,
-          id: data._id,
-        };
-        localStorage.setItem('obj1', JSON.stringify(datas));
-        this.toastr.success('login succesfull');
-
-        this.router.navigate(['/dashboard']);
-      },
-      (err) => {
-        this.toastr.error('login failed');
-     
-        console.log(err);
       }
-    );
+      if (data.docs[0].emailId === Formvalue.emailId) {
+        if (data.docs[0].Password === Formvalue.Password) {
 
-    console.log(Formvalue.emailId);
+          this.router.navigate(['/dashboard'],
+           {
+            queryParams: userData
+          })
+         this.toastr.success("Login Successfully");
+        }
+        
+      }
+      else {
+        this.toastr.error("Enter Correct Password");
+        
 
-    
+      }
+    })
+
   }
 }
+    
+  

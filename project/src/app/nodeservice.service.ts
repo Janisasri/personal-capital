@@ -6,8 +6,8 @@ import { HttpClient} from '@angular/common/http';
  providedIn: 'root'
 })
 export class nodeservice {
-  public userData = JSON.parse(localStorage.getItem('obj1') || '{}')
-  public userId = this.userData.id
+  // public userData = JSON.parse(localStorage.getItem('obj1') || '{}')
+  // public userId = this.userData.id
 
  constructor(private http: HttpClient) {}
     storedata(FormData :any) {
@@ -15,7 +15,7 @@ export class nodeservice {
     }
     test_get(id:any)
   {
-    return this.http.get<any>('http://localhost:8000/getdata/'+id);
+    return this.http.get<any>('http://localhost:8000/getdata/' +id);
 }
   }
  

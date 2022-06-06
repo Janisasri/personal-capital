@@ -9,6 +9,10 @@ import * as lodash from 'lodash'
 export class ViewdetailsComponent implements OnInit {
    
   //Object using to fetch the data//
+  // userData:{
+  //   id:string
+  // }
+  // userId:any;
   alluser: any = [];
   alluserData: any;
   store: any = []
@@ -17,13 +21,15 @@ export class ViewdetailsComponent implements OnInit {
   val: any;
        
   //Local storage get item for type setting//
-  public userData = JSON.parse(localStorage.getItem('obj1') || '{}')
-  public userId = this.userData.id
+
  
   constructor(private svc:DaoserviceService) {
+    // this. userData = JSON.parse(localStorage.getItem('obj1') || '{}')
+    // this. userId = this.userData.id ||''
     this.fetchAdditionalDetails();
    }
-lookupIdArray=[]
+  
+  lookupIdArray=[]
    //fetch the additional info for interpoliation concept//
    fetchAdditionalDetails(){
     
@@ -48,7 +54,7 @@ lookupIdArray=[]
         console.log(rej)
       });
    } 
-      //fetch the invest info for interpoliation concept//   
+        
    ngOnInit(): void {
     console.log("Hello");
   }

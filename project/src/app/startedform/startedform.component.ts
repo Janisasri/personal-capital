@@ -5,6 +5,7 @@ import { nodeservice } from '../nodeservice.service';
 import { HttpClient } from '@angular/common/http';
 import { DaoserviceService } from '../daoservice.service';
 import { ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -22,9 +23,9 @@ export class StartedformComponent implements OnInit {
     emailId:'',
     Password:'',
     Confirmpassword:'',
-
-   };
-  constructor(private fb:FormBuilder,private api:nodeservice, private http:HttpClient,private svc:DaoserviceService,private toastr:ToastrService) { 
+  };
+ 
+  constructor(private fb:FormBuilder,private api:nodeservice, private http:HttpClient,private svc:DaoserviceService,private toastr:ToastrService,private router:Router) { 
 
     this.checkout=this.fb.group({
       fullName:[this.userRecord.fullName],
@@ -66,21 +67,42 @@ export class StartedformComponent implements OnInit {
       }
     );
     }
+    get fullName() {
+      return this.checkout.get('fullName')!;
+    }
+    get Username() {
+      return this.checkout.get('Username')!;
+    }
+    get emailId() {
+      return this.checkout.get('emailId')!;
+    }
+    get Password() {
+      return this.checkout.get('Password')!;
+    }
+    get Confirmpassword() {
+      return this.checkout.get('Confirmpassword')!;
+    }
+
     get f(): {[key:string]:AbstractControl} {
       return this.checkout.controls;
     }
     //Posting the data in couchDB//
     onSubmit(Formvalue:any): void {
-
+     
       console.log("from form",Formvalue);
       this.api.storedata(Formvalue).subscribe((data) => {
         console.log("data returned from server",data);
       
       })
       this.submitted=true;
-      if (this.checkout.invalid) {
-        this.toastr.error("Please Register Your Form");
-        return;
+      if (this.checkout.invalid)  {
+        // this.toastr.error("Please fill the form");
+       return;
+      }
+      else if (this.checkout.valid) {
+
+        this.toastr.success("Registered Successfully");
+         this.router.navigate(['/home']);
       }
       console.log(JSON.stringify(this.checkout.value,null,2));
     }
