@@ -96,7 +96,7 @@ export class StartedformComponent implements OnInit {
       })
       this.submitted=true;
       if (this.checkout.invalid)  {
-        // this.toastr.error("Please fill the form");
+        
        return;
       }
       else if (this.checkout.valid) {
