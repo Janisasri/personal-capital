@@ -14,7 +14,6 @@
      background-color: cyan;
   }
   .head_1 {
-    /* background-color: cyan; */
     color: cyan;
     font-size: 300;
   }
@@ -29,34 +28,28 @@
   }
   .card-title {
     color: cyan;
+    font-size: 40px;
+    font-weight: 300;
     /* text-decoration-line: underline; */
   
   }
   .card-text {
     color: cyan;
+    font-size: large;
   }
   .card-img-top {
-    /* width: 80px; */
+    height: 25vw;
     background-color: black;
   }
   .card {
     background-color: black;
   }
-  .card-title {
-    font-size: 40px;
-    font-weight: 300;
-  }
-  .card-text {
-    font-size: large;
-  }
+  
+  
   .row row-cols-1 row-cols-md-2 g-4 {
     overflow: hidden;
   }
-  .card-img-top {
-    /* width: 100%; */
-    height: 25vw;
-    /* object-fit: cover; */
-}
+ 
 .column {
   float: left;
   width: 70%;
@@ -64,9 +57,7 @@
 .text {
   color: cyan;
 }
-.head_1 {
-  color: cyan;
-}
+
 .img1 {
   width: 400px;
 }
@@ -101,6 +92,8 @@
   background-color: #aaa;
   width: 100%;
   padding: 20px;
+  background-color: black;
+  
 }
 
 /* Add a card effect for articles */
@@ -148,9 +141,7 @@
   color: cyan;
   
 }
-.fakeimg {
-  background-color: black;
-}
+
 .para {
   color: cyan;
 }
