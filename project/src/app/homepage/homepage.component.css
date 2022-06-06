@@ -13,10 +13,8 @@
     
   }
   .btn {
-     color:black;
       background-color: cyan;
       border-radius: 10px;
-      background-color: cyan;
       color: black;
       padding: 10px;
       box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
@@ -52,7 +50,6 @@
   }
   .card {
     background-color: black;
-    background-color: white;
     padding: 20px;
     margin-top: 20px;
     
@@ -67,6 +64,11 @@
 .column {
   float: left;
   width: 70%;
+  width: 50%;
+  padding: 10px;
+  height: 400px; 
+  background-color: black;/* Should be removed. Only for demonstration */
+  
 }
 .text {
   color: cyan;
@@ -86,6 +88,8 @@
   text-align: center;
   background: white;
   color: cyan;
+  background-color: black;
+  
   
 }
 
@@ -105,7 +109,7 @@
 
 /* Fake image */
 .fakeimg {
-  background-color: #aaa;
+
   width: 100%;
   padding: 20px;
   background-color: black;
@@ -120,6 +124,7 @@
   content: "";
   display: table;
   clear: both;
+  
 }
 
 /* Footer */
@@ -143,10 +148,6 @@
 .head_3 {
   color: cyan;
 }
-.header {
-  background-color: black;
-}
-
 .head_4 {
   color: cyan;
   background-color: black;
@@ -177,6 +178,8 @@
   transition: transform 0.6s;
   transform-style: preserve-3d;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  border-radius: 50px;
+  
 }
 
 .flip-card:hover .flip-card-inner {
@@ -194,6 +197,7 @@
 .flip-card-front {
   background-color: cyan;
   color: black;
+  text-align: center;
 }
 
 .flip-card-back {
@@ -220,31 +224,16 @@
 .head_6 {
   font-size: 25px;
 }
-.flip-card-front {
-  text-align: center;
-}
-.flip-card-inner {
-  border-radius: 50px;
-}
+
+
 .flip-card {
   border-radius: 40px;
 }
 /* Create two equal columns that floats next to each other */
-.column {
-  float: left;
-  width: 50%;
-  padding: 10px;
-  height: 400px; 
 
-  background-color: black;/* Should be removed. Only for demonstration */
-}
 
 /* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
+
 .line {
   color: cyan;
   border: 20px;
