@@ -42,7 +42,7 @@
       <div class="form-group">
         <label>Email</label>
         <input
-        id="emailId"
+        id="emailId" (change)="checkForValidity()"
           type="text"
           formControlName="email"
           class="form-control"
@@ -106,7 +106,7 @@
       </div><br>
                           <!-- Button Container -->
       <div class="button_container ">
-        <button type="button" class="btn btn-lg" (click)="onSubmit(this.checkout.value)">Register</button><br><br>
+        <button type="button" [disabled]="!submitted" class="btn btn-lg" (click)="onSubmit(this.checkout.value)">Register</button><br><br>
         <button type="button" (click)="onReset()" class="btn">Reset</button><br>
         
       <button routerLink="/login" class="btn" >Login<br></button>
@@ -119,7 +119,7 @@
 
 
 
-<router-outlet></router-outlet> 
+<!-- <router-outlet></router-outlet>  -->
 
 
 

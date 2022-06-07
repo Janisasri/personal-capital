@@ -16,12 +16,12 @@ export class AppComponent {
  
 
   constructor( private router: Router) {
-    this. userData = JSON.parse(localStorage.getItem('obj1'))
-     if(this.userData == null){
-       this.router.navigate(['/home']);
+    const userData:any =  localStorage.getItem('obj1');
+     if(userData == 'undefined' || userData == null){
+      //  this.router.navigate(['/home']);
      }
-     else if(this.userData != undefined &&  this.userData != null && this.userData['id']) {
-    //  this.userId = this.userData.id
+     else if(userData != undefined &&  userData != null && userData['id']) {
+     this.userData.id =  userData.id;
      this.router.navigate(['/login1']);
      }
     }

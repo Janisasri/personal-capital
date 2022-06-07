@@ -25,7 +25,7 @@ export class StartedformComponent implements OnInit {
     Confirmpassword:'',
   };
  
-  constructor(private fb:FormBuilder,private api:nodeservice, private http:HttpClient,private svc:DaoserviceService,private toastr:ToastrService,private router:Router) { 
+  constructor(private fb:FormBuilder,private api:nodeservice, private http:HttpClient,private couchService:DaoserviceService,private toastr:ToastrService,private router:Router) { 
 
     this.checkout=this.fb.group({
       fullName:[this.userRecord.fullName],
@@ -111,7 +111,25 @@ export class StartedformComponent implements OnInit {
       this.submitted=false;
       this.checkout.reset();
     }
-    
+    checkForValidity(){
+      const emailValue = this.checkout.value['email']
+      const query = {
+        'emailId':emailValue,
+        'type':'userInfo'
+      }
+      this.couchService.emailValidation(query).subscribe((response:any)=>{
+        console.log(response)
+        if(response.docs.length >1){
+        this.toastr.error("email already exist");
+        this.submitted =false
+        }
+        else{
+          this.submitted =true
+        }
+      },err=>{
+        console.error(err)
+      })
+    }
 }
 
 

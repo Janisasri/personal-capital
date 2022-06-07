@@ -44,16 +44,19 @@ export class InvestinfoComponent implements OnInit {
 
   //Posting the data to CouchDB//
   onSubmit(Formvalue:any){
-    try{
+   
     console.log("from form", Formvalue);
     this.svc.investAdd(Formvalue).subscribe((data) => {
       console.log("data returned from server", data);
-      Formvalue.reset();
+      this.toastr.success("Submitted Succesfully,Click Next Button");
+      this.investInfo.reset();
+    
   
-    })
-  }catch(err:any){
-    this.toastr.error("Unable to submit the data",err.name);
-  }
+    },
+    err=>{
+      this.toastr.error("Failed to submit",err);
+    });
+ 
   }
   
 }

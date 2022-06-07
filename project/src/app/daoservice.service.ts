@@ -26,7 +26,13 @@ export class DaoserviceService {
   };
   dataBaseName = "personal-capital"
    constructor(private http: HttpClient) {
-    this. userData = JSON.parse(localStorage.getItem('obj1'))
+    const userData:any =  localStorage.getItem('obj1');
+    if(userData == 'undefined' || userData == null){
+     //  this.router.navigate(['/home']);
+    }
+    else if(userData != undefined &&  userData != null && userData['id']) {
+    this.userData.id =  userData.id;
+  }
     //  this.userId = this.userData.id ||''
   }
   
@@ -120,6 +126,12 @@ findApi(data){
  
   return this.http.post(url,data,this.httpOptions);
 }
-
+emailValidation(query:any){
+const url = `${this.url+this.dataBaseName}/_find`;
+const selectorData = {
+  selector:query
+}
+return this.http.post(url,selectorData,this.httpOptions)
+}
 }
  

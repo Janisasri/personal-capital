@@ -91,21 +91,20 @@ export class CarddetailsComponent implements OnInit {
    }
 
   //  Reset Our Form
-   onReset():void {
-     this.submitted=false;
-     this.cardDetails.reset();
-   }
+  
   
    //Posting our Form data to CouchDB// 
   onSubmit(Formvalue:any){
-    try{
   console.log("from form", Formvalue);
   this.api.addData(Formvalue).subscribe((data) => {
-    console.log("data returned from server", data);
+  console.log("data returned from server", data);
+  this.toastr.success("Submitted,Click Next button");
+  this.cardDetails.reset();
    
-})
-}catch(err:any){
-  this.toastr.error("Unable to submit the data",err.name);
-}
+},
+err=>{
+  this.toastr.error("Failed to submit",err);
+});
+
   }
 }

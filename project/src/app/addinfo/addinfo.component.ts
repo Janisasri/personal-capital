@@ -117,17 +117,19 @@ export class AddinfoComponent implements OnInit {
   
   //Posting data to CouchDB//
 onSubmit(Formvalue: any) {
-  try{
+  
   console.log("from form", Formvalue);
   this.api.storeData(Formvalue).subscribe((data) => {
+
     console.log("data returned from server", data);
-    Formvalue.reset();
-  })
-}catch(err:any){
-  this.toastr.error("Unable to submit the data",err.name);
-  
-}
-}
+    this.toastr.success("Form Submitted Succesfully,Click Next button");
+    this.addinfo.reset();
+  },
+  err=>{
+    this.toastr.error("Form Failed to Submitted",err);
+  });
+ }
+
 
 //Fetching Location lookup for location input fields//
 fetchlocationdetails(){

@@ -17,9 +17,7 @@ export class HomepageComponent implements OnInit {
     Password: '',
   };
 
-  
-
-  constructor(
+constructor(
     private fb: FormBuilder,
     private api: nodeservice,
     private router: Router,

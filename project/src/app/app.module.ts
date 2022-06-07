@@ -22,7 +22,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { CommonModule } from '@angular/common';
 import { DashboardcontentComponent } from './dashboardcontent/dashboardcontent.component';
 import { SavingplannerComponent } from './savingplanner/savingplanner.component';
-import { PersonalcapitalComponent } from './personalcapital/personalcapital.component';
+
 
 @NgModule({
   declarations: [
@@ -40,7 +40,7 @@ import { PersonalcapitalComponent } from './personalcapital/personalcapital.comp
     LearnComponent,
     DashboardcontentComponent,
     SavingplannerComponent,
-    PersonalcapitalComponent,
+    
    
   ],
   imports: [
