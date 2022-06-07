@@ -18,7 +18,7 @@ export class AppComponent {
   constructor( private router: Router) {
     const userData:any =  localStorage.getItem('obj1');
      if(userData == 'undefined' || userData == null){
-     
+      console.log("heloo");
      }
      else if(userData != undefined &&  userData != null && userData['id']) {
      this.userData.id =  userData.id;

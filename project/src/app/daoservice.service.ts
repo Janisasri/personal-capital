@@ -28,7 +28,7 @@ export class DaoserviceService {
    constructor(private http: HttpClient) {
     const userData:any =  localStorage.getItem('obj1');
     if(userData == 'undefined' || userData == null){
-   
+     console.log("hello");
     }
     else if(userData != undefined &&  userData != null && userData['id']) {
     this.userData.id =  userData.id;
