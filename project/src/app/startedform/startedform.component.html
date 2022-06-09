@@ -1,131 +1,90 @@
- 
- 
- <body style=" background: rgb(28,27,33);
+<body
+  style=" background: rgb(28,27,33);
  background: linear-gradient(180deg, rgba(28,27,33,0.9416141456582633) 0%, rgba(9,121,105,1) 35%, rgba(0,241,255,1) 100%);">
- >>
- 
+  >>
+
   <h2 class="text_1">Congrats, you’re a few steps away from financial empowerment.</h2><br>
   <p class="para">Sign up now to get free, professional-grade financial tools</p><br>
   <!-- Forms Input to Register -->
   <div class="container">
- <div class="register-form">
-    <form [formGroup]="checkout">
-      <div class="form-group">
-        <label>Full Name</label>
-        <input
-        id="fullName"
-          type="text"
-          formControlName="fullname"
-          class="form-control"
-          [ngClass]="{ 'is-invalid': submitted && f.fullname.errors }"
-        />
-        <div *ngIf="submitted && f.fullname.errors" class="invalid-feedback">
-          <div *ngIf="f.fullname.errors.required">Fullname is required</div>
-        </div> 
-      </div><br>
-      <div class="form-group">
-        <label>Username</label>
-        <input
-        id="Username"
-          type="text"
-          formControlName="username"
-          class="form-control"
-          [ngClass]="{ 'is-invalid': submitted && f.username.errors }"
-        />
-        <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
-          <div *ngIf="f.username.errors.required">Username is required</div>
-          <div *ngIf="f.username.errors.minlength">
-            Username must be at least 6 characters
+    <div class="register-form">
+      <form [formGroup]="checkout">
+        <div class="form-group">
+          <label>Full Name</label>
+          <input id="fullName" type="text" formControlName="fullname" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f.fullname.errors }" />
+          <div *ngIf="submitted && f.fullname.errors" class="invalid-feedback">
+            <div *ngIf="f.fullname.errors.required">Fullname is required</div>
           </div>
-          <div *ngIf="f.username.errors.maxlength">
-            Username must not exceed 20 characters
+        </div><br>
+        <div class="form-group">
+          <label>Username</label>
+          <input id="Username" type="text" formControlName="username" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+          <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+            <div *ngIf="f.username.errors.required">Username is required</div>
+            <div *ngIf="f.username.errors.minlength">
+              Username must be at least 6 characters
+            </div>
+            <div *ngIf="f.username.errors.maxlength">
+              Username must not exceed 20 characters
+            </div>
           </div>
+        </div><br>
+        <div class="form-group">
+          <label>Email</label>
+          <input id="emailId" (change)="checkForValidity()" type="text" formControlName="email" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+          <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+            <div *ngIf="f.email.errors.required">Email is required</div>
+            <div *ngIf="f.email.errors.email">Email is invalid</div>
+          </div>
+        </div><br>
+        <div class="form-group">
+          <label>Password</label>
+          <input id="Password" type="password" formControlName="password" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+          <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+            <div *ngIf="f.password.errors.required">Password is required</div>
+            <div *ngIf="f.password.errors.minlength">
+              Password must be at least 6 characters
+            </div>
+            <div *ngIf="f.password.errors.maxlength">
+              Username must not exceed 40 characters
+            </div>
+          </div>
+        </div><br>
+        <div class="form-group">
+          <label>Confirm Password</label>
+          <input id="Confirmpassword" type="password" formControlName="confirmPassword" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f.confirmPassword.errors }" />
+          <div *ngIf="submitted && f.confirmPassword.errors" mclass="invalid-feedback">
+            <div *ngIf="f.confirmPassword.errors.required">
+              Confirm Password is required
+            </div>
+            <div *ngIf="f.confirmPassword.errors.matching">
+              Confirm Password does not match
+            </div>
+          </div>
+        </div><br>
+        <div class="form-group form-check">
+          <input type="checkbox" formControlName="acceptTerms" class="form-check-input" style="margin-left:20px;"
+            [ngClass]="{ 'is-invalid': submitted && f.acceptTerms.errors }" />
+          <label for="acceptTerms" class="form-check-label">I have read and agree to the Terms</label>
+          <div *ngIf="submitted && f.acceptTerms.errors" class="invalid-feedback">
+            Accept Terms is required
+          </div>
+        </div><br>
+        <!-- Button Container -->
+        <div class="button_container ">
+          <button type="button" [disabled]="!submitted" class="btn btn-lg"
+            (click)="onSubmit(this.checkout.value)">Register</button><br><br>
+          <button type="button" (click)="onReset()" class="btn">Reset</button><br>
+
+          <button routerLink="/login" class="btn">Login<br></button>
+
         </div>
-      </div><br>
-      <div class="form-group">
-        <label>Email</label>
-        <input
-        id="emailId" (change)="checkForValidity()"
-          type="text"
-          formControlName="email"
-          class="form-control"
-          [ngClass]="{ 'is-invalid': submitted && f.email.errors }"
-        />
-        <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
-          <div *ngIf="f.email.errors.required">Email is required</div>
-          <div *ngIf="f.email.errors.email">Email is invalid</div>
-        </div>
-      </div><br>
-      <div class="form-group">
-        <label>Password</label>
-        <input
-        id="Password"
-          type="password"
-          formControlName="password"
-          class="form-control"
-          [ngClass]="{ 'is-invalid': submitted && f.password.errors }"
-        />
-        <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
-          <div *ngIf="f.password.errors.required">Password is required</div>
-          <div *ngIf="f.password.errors.minlength">
-            Password must be at least 6 characters
-          </div>
-          <div *ngIf="f.password.errors.maxlength">
-            Username must not exceed 40 characters
-          </div>
-        </div>
-      </div><br>
-      <div class="form-group">
-        <label>Confirm Password</label>
-        <input
-        id="Confirmpassword"
-          type="password"
-          formControlName="confirmPassword"
-          class="form-control"
-          [ngClass]="{ 'is-invalid': submitted && f.confirmPassword.errors }"
-        />
-        <div *ngIf="submitted && f.confirmPassword.errors"mclass="invalid-feedback">
-          <div *ngIf="f.confirmPassword.errors.required">
-            Confirm Password is required
-          </div>
-          <div *ngIf="f.confirmPassword.errors.matching">
-            Confirm Password does not match
-          </div>
-        </div>
-      </div><br>
-      <div class="form-group form-check">
-        <input
-          type="checkbox"
-          formControlName="acceptTerms"
-          class="form-check-input" style="margin-left:20px;"
-          [ngClass]="{ 'is-invalid': submitted && f.acceptTerms.errors }"
-        />
-        <label for="acceptTerms" class="form-check-label"
-          >I have read and agree to the Terms</label
-        >
-        <div *ngIf="submitted && f.acceptTerms.errors" class="invalid-feedback">
-          Accept Terms is required
-        </div>
-      </div><br>
-                          <!-- Button Container -->
-      <div class="button_container ">
-        <button type="button" [disabled]="!submitted" class="btn btn-lg" (click)="onSubmit(this.checkout.value)">Register</button><br><br>
-        <button type="button" (click)="onReset()" class="btn">Reset</button><br>
-        
-      <button routerLink="/login" class="btn" >Login<br></button>
-   
-      </div>
-</form>
-</div>
-</div>
+      </form>
+    </div>
+  </div>
 </body>
-<router-outlet></router-outlet>
-
-
-
-
-
-
-
-
-  

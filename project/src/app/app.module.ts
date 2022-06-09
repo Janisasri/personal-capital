@@ -23,6 +23,9 @@ import { CommonModule } from '@angular/common';
 import { DashboardcontentComponent } from './dashboardcontent/dashboardcontent.component';
 import { SavingplannerComponent } from './savingplanner/savingplanner.component';
 import { NgxSpinnerModule } from 'ngx-spinner';
+import { AddinfoviewComponent } from './addinfoview/addinfoview.component';
+import { CardviewComponent } from './cardview/cardview.component';
+import { PlanviewComponent } from './planview/planview.component';
 
 
 @NgModule({
@@ -41,6 +44,9 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     LearnComponent,
     DashboardcontentComponent,
     SavingplannerComponent,
+    AddinfoviewComponent,
+    CardviewComponent,
+    PlanviewComponent,
     
    
   ],

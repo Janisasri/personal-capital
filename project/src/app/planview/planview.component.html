@@ -1,0 +1,45 @@
+<link rel="stylesheet" type="text/css"
+    href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+<div id="mainCoantiner">
+    <!--dust particel-->
+    <div class="margin-body">
+
+        <div>
+            <div class="starsec"></div>
+            <div class="starthird"></div>
+            <div class="starfourth"></div>
+            <div class="starfifth"></div>
+        </div><br>
+        <div class="row">
+            <div class="col-sm-12 col-md-12">
+                <div class="wpb_text_column wpb_content_element ">
+                    <div class="wpb_wrapper">
+                        <div class="title-h1 text-center"><span><span class="light"> </span>YOUR PLANS DETAILS
+                                INFORMATION🙂</span></div>
+
+                        <div class="title-h1 text-center"><span><span class="light">Explore More Of Our </span>
+                                Financial Invester</span></div><br>
+
+
+                        <div class="buttons">
+                            <a href="investershow" type="button" class="btn">Explore More Our Financial Investor</a>
+                        </div><br>
+
+                        <div class="card text-center">
+
+                            <table class="table table-striped table-dark">
+                                <caption>Plans Details</caption>
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Plans</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let info of alluser">
+                                        <td>{{info.Plan}}</td>
+                                    </tr>
+                                </tbody>
+
+                            </table>
+
+                        </div>

@@ -26,7 +26,7 @@ export class AddinfoComponent implements OnInit {
     locationInfo:'',
     PhoneNumber:'',
     Address:'',
-    Postal:'',
+    
     checkbox:'',
     };
 
@@ -37,6 +37,7 @@ export class AddinfoComponent implements OnInit {
   obj: any;
   idValue: any;
   val: any;
+  res:any
   
   constructor(private fb:FormBuilder,private api:DaoserviceService, private http:HttpClient,private router:Router,private toastr: ToastrService) {
      this.fetchlocationdetails();
@@ -117,17 +118,30 @@ export class AddinfoComponent implements OnInit {
   
   //Posting data to CouchDB//
 onSubmit(Formvalue: any) {
-  
+  this.api.fetchData("additionalInfo").subscribe(res =>{
+    this.val=res;
+    console.log(this.val);
+    console.log(this.val.rows.length);
+    if(this.val.rows.length < 1){
+      this.router.navigate(['/addinfo'], )
+
   console.log("from form", Formvalue);
   this.api.storeData(Formvalue).subscribe((data) => {
-     
+
+   
     console.log("data returned from server", data);
     this.toastr.success("Form Submitted Succesfully,Click Next button");
+  
     this.addinfo.reset();
   },
   err=>{
     this.toastr.error("Form Failed to Submitted",err);
   });
+}
+else{
+  this.toastr.warning("Data Exists");
+}
+});
  }
 
 
@@ -142,6 +156,7 @@ this.api.findApi(query).subscribe(res =>{
     console.log(res);
     let datas= this.alluser =  res['docs'];
     console.log(datas)
+
     
    
   })

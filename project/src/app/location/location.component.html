@@ -1,18 +1,11 @@
- <!-- Forms fields to set lookup -->
+<!-- Forms fields to set lookup -->
 <div class="Location-form">
-    <form [formGroup]="locationForm">
-      <div class="form-group">
-        <label>Location</label>
-        <input id="Location" type="text" formControlName="Location" class="form-control" name="Location"/>
-      
-        <label>Pincode</label>
-        <input id="Pincode" type="number" formControlName="Pincode" class="form-control" name="Pincode"/>
-        </div><br>
-        <button class="btn" (click)="Onsubmit(this.locationForm.value)">Submit</button>
-        
-      </form>
-      </div>
- 
+  <form [formGroup]="locationForm">
+    <div class="form-group">
+      <label>Location</label>
+      <input id="Location" type="text" formControlName="Location" class="form-control" name="Location" />
+    </div><br>
+    <button class="btn" (click)="Onsubmit(this.locationForm.value)">Submit</button>
 
-
-  
+  </form>
+</div>

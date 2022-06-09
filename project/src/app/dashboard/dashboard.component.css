@@ -92,3 +92,6 @@ background: linear-gradient(90deg, rgba(28,27,33,0.9416141456582633) 0%, rgba(9,
     margin-left: -15rem;
   }
 }
+.head {
+  text-align: center;
+}

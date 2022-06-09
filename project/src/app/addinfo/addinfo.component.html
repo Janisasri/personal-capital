@@ -1,134 +1,118 @@
-<nav class="navbar navbar-expand-lg navbar-light" style="background-color:black;">
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavbarToggler3"
-      aria-controls="myNavbarToggler3" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-  </button>
-  
-  <img src="../../images/logop.png" width="150px" alt="">
-  <div class="collapse navbar-collapse" id="myNavbarToggler3">
-      <ul class="navbar-nav ml-auto">
-         
-          <li class="nav-item">
-              <a class="nav-link" href="#">HOME</a>
-          </li>
-          <li class="nav-item">
-              <a class="nav-link" href="#" routerLink="investgo">INVESTORS</a>
-          </li>
-          <li class="nav-item">
-              <a class="nav-link" href="#" routerLink="learn">LEARNMORE</a>
-          </li>
-        
-      </ul>
-  </div>
-</nav>
-<body style=" background: rgb(28,27,33);
-background: linear-gradient(180deg, rgba(28,27,33,0.9416141456582633) 0%, rgba(9,121,105,1) 35%, rgba(0,241,255,1) 100%);">>
-    <div class="container"> 
+<body
+  style=" background: rgb(28,27,33);
+background: linear-gradient(180deg, rgba(28,27,33,0.9416141456582633) 0%, rgba(9,121,105,1) 35%, rgba(0,241,255,1) 100%);">
+  >
+  <div class="container">
     <h2 class="head">Get the most out of Personal Capital.</h2>
     <p class="head">It's easy to get started, and it only takes minutes. Here's how</p>
-    <img src="../../images/icon.svg" class="head1" alt="" >
-    </div>
-<div class="wrapper">
+    <img src="../../images/icon.svg" class="head1" alt="">
+  </div>
+  <div class="wrapper">
     <div class="title">
       Additional Info
 
       <!-- Forms InputField and Validation Content -->
-      
-    <div class="form">
-      <form [formGroup]="addinfo" >
-       <div class="inputfield">
-          <label for="FirstName">First Name</label>
-          <input type="text" class="form-control" id="FirstName" formControlName="FirstName" name="FirstName">
-       </div> 
-       <div *ngIf="f.FirstName?.touched && f.FirstName?.invalid" >
-        <div *ngIf="f.FirstName.errors?.required" class="error"> FirstName is required.</div>
-        <div *ngIf="f.FirstName.errors?.minlength">FirstName should be character.</div>
-    </div>
-        <div class="inputfield">
-          <label for="LastName">Last Name</label>
-          <input type="text" class="form-control" id="LastName" formControlName="LastName" name="LastName">
-          </div>  
-          <div *ngIf="f.LastName?.touched && f.LastName?.invalid" >
+
+      <div class="form">
+        <form [formGroup]="addinfo">
+          <div class="inputfield">
+            <label for="FirstName">First Name</label>
+            <input type="text" class="form-control" id="FirstName" formControlName="FirstName" name="FirstName">
+          </div>
+          <div *ngIf="f.FirstName?.touched && f.FirstName?.invalid">
+            <div *ngIf="f.FirstName.errors?.required" class="error"> FirstName is required.</div>
+            <div *ngIf="f.FirstName.errors?.minlength">FirstName should be character.</div>
+          </div>
+          <div class="inputfield">
+            <label for="LastName">Last Name</label>
+            <input type="text" class="form-control" id="LastName" formControlName="LastName" name="LastName">
+          </div>
+          <div *ngIf="f.LastName?.touched && f.LastName?.invalid">
             <div *ngIf="f.LastName.errors?.required" class="error"> LastName is required.</div>
             <div *ngIf="f.LastName.errors?.minlength">LastName should be character.</div>
-        </div>
-       <div class="inputfield">
-          <label for="Occupation">Occupation</label>
-          <input type="Occupation" class="form-control" id="Occupation" formControlName="Occupation" name="Occupation">
-       </div>  
-       <div *ngIf="f.Occupation?.touched && f.Occupation?.invalid" >
-        <div *ngIf="f.Occupation.errors?.required" class="error"> Occupation is required.</div>
-        <div *ngIf="f.Occupation.errors?.minlength">Occupation should be character.</div>
-    </div>
-      <div class="inputfield">
-        <label for="NetWorth">Net worth</label>
-        <input type="NetWorth" class="form-control" id="NetWorth" formControlName="NetWorth" name="NetWorth">
-       </div> 
-       <div *ngIf="f.NetWorth?.touched && f.NetWorth?.invalid" >
-        <div *ngIf="f.NetWorth.errors?.required" class="error"> NetWorth is required.</div>
-        <div *ngIf="f.NetWorth.errors?.minlength">NetWorth should be character.</div>
-    </div>
-       <div class="inputfield">
-        <label for="Retirement">Retirement Age</label>
-        <input type="RetirementAge" class="form-control" id="Retirement" formControlName="Retirement" name="Retirement">
-       </div> 
-       <div *ngIf="f.Retirement?.touched && f.Retirement?.invalid" >
-        <div *ngIf="f.Retirement.errors?.required" class="error"> Retirement is required.</div>
-        <div *ngIf="f.Retirement.errors?.minlength">Retirement should be Number.</div>
-    </div>
-        <div class="inputfield">
-         <label for="Gender">Gender</label><br>
-             <input type="radio" id="Gender" name="Gender" value="Male" class="error" formControlName="Gender">
-           <label for="age1">Male</label>
-           <input type="radio" id="Gender" name="Gender" value="Female" class="error" formControlName="Gender">
-           <label for="age2">Female</label>
-       </div>
-      
-       <div class="inputfield">
-        <label for="Location">Location</label>
-        <select type="text" class="form-control" id="Location" formControlName="locationInfo" name="Location">
-        <option  *ngFor="let c of alluser" value="{{c._id}}">
-          {{c.Location}}</option>
-        </select>
-        <div *ngIf="f.Location?.touched && f.Location?.invalid" >
-          <div *ngIf="f.Location.errors?.required" class="error"> Location is required.</div>
-          <div *ngIf="f.Location.errors?.minlength">Location should be Number.</div>
-      </div> 
-        </div> 
-      <div class="inputfield">
-          <label>Phone Number</label>
-          <input type="number" class="form-control" id="PhoneNumber" formControlName="PhoneNumber" name="PhoneNumber">
-       </div>
-       <div *ngIf="f.PhoneNumber?.touched && f.PhoneNumber?.invalid" >
-        <div *ngIf="f.PhoneNumber.errors?.required" class="error"> PhoneNumber is required.</div>
-        <div *ngIf="f.PhoneNumber.errors?.minlength">PhoneNumber should be Number.</div>
-    </div> 
-      <div class="inputfield">
-          <label>Address</label>
-          <input type="text" class="form-control" id="Address" formControlName="Address" name="Address">
-       </div> 
-       <div *ngIf="f.Address?.touched && f.Address?.invalid" >
-        <div *ngIf="f.Address.errors?.required" class="error"> Address is required.</div>
-      
-    </div>
-       
-       
-      <div class="inputfield terms">
-          <label class="check">
-            <input type="checkbox">
-            <span class="checkmark" id="checkbox" ></span>
-          </label>
-          <p>Agreed to terms and conditions</p>
-       </div> 
+          </div>
+          <div class="inputfield">
+            <label for="Occupation">Occupation</label>
+            <input type="Occupation" class="form-control" id="Occupation" formControlName="Occupation"
+              name="Occupation">
+          </div>
+          <div *ngIf="f.Occupation?.touched && f.Occupation?.invalid">
+            <div *ngIf="f.Occupation.errors?.required" class="error"> Occupation is required.</div>
+            <div *ngIf="f.Occupation.errors?.minlength">Occupation should be character.</div>
+          </div>
+          <div class="inputfield">
+            <label for="NetWorth">Net worth</label>
+            <input type="NetWorth" class="form-control" id="NetWorth" formControlName="NetWorth" name="NetWorth">
+          </div>
+          <div *ngIf="f.NetWorth?.touched && f.NetWorth?.invalid">
+            <div *ngIf="f.NetWorth.errors?.required" class="error"> NetWorth is required.</div>
+            <div *ngIf="f.NetWorth.errors?.minlength">NetWorth should be character.</div>
+          </div>
+          <div class="inputfield">
+            <label for="Retirement">Retirement Age</label>
+            <input type="RetirementAge" class="form-control" id="Retirement" formControlName="Retirement"
+              name="Retirement">
+          </div>
+          <div *ngIf="f.Retirement?.touched && f.Retirement?.invalid">
+            <div *ngIf="f.Retirement.errors?.required" class="error"> Retirement is required.</div>
+            <div *ngIf="f.Retirement.errors?.minlength">Retirement should be Number.</div>
+          </div>
+          <div class="inputfield">
+            <label for="Gender">Gender</label><br>
+            <input type="radio" id="Gender" name="Gender" value="Male" class="error" formControlName="Gender">
+            <label for="age1">Male</label>
+            <input type="radio" id="Gender" name="Gender" value="Female" class="error" formControlName="Gender">
+            <label for="age2">Female</label>
+          </div>
 
-       <!-- Buttons Container -->
-      <div class="inputfield">
-        <button type="button"  class="btn" (click)="onSubmit(this.addinfo.value)">Submit</button>
-        <a href="Investinfo" class="btn" >Next</a>
+          <div class="inputfield">
+            <label for="locationInfo">Location</label>
+            <select type="text" class="form-control" id="locationInfo" formControlName="locationInfo"
+              name="locationInfo">
+              <option *ngFor="let c of alluser" value="{{c._id}}">
+                {{c.Location}}</option>
+            </select>
+            <div *ngIf="f.locationInfo?.touched && f.locationInfo?.invalid">
+              <div *ngIf="f.locationInfo.errors?.required" class="error"> Location is required.</div>
+              <div *ngIf="f.locationInfo.errors?.minlength">Location should be Number.</div>
+            </div>
+          </div>
+          <div class="inputfield">
+            <label>Phone Number</label>
+            <input type="number" class="form-control" id="PhoneNumber" formControlName="PhoneNumber" name="PhoneNumber">
+          </div>
+          <div *ngIf="f.PhoneNumber?.touched && f.PhoneNumber?.invalid">
+            <div *ngIf="f.PhoneNumber.errors?.required" class="error"> PhoneNumber is required.</div>
+            <div *ngIf="f.PhoneNumber.errors?.minlength">PhoneNumber should be Number.</div>
+          </div>
+          <div class="inputfield">
+            <label>Address</label>
+            <input type="text" class="form-control" id="Address" formControlName="Address" name="Address">
+          </div>
+          <div *ngIf="f.Address?.touched && f.Address?.invalid">
+            <div *ngIf="f.Address.errors?.required" class="error"> Address is required.</div>
+
+          </div>
+
+
+          <div class="inputfield terms">
+            <label class="check">
+              <input type="checkbox">
+              <span class="checkmark" id="checkbox"></span>
+            </label>
+            <p>Agreed to terms and conditions</p>
+          </div>
+
+          <!-- Buttons Container -->
+          <div class="inputfield">
+            <button type="button" class="btn" (click)="onSubmit(this.addinfo.value)">Submit</button>
+            <a href="Investinfo" class="btn">Next</a>
+            <a href="addview" class="btn">View Details</a>
+
+          </div>
+        </form>
       </div>
-      </form>
     </div>
-</div> 
 
-</div> 
-</body>   
+  </div>
+</body>

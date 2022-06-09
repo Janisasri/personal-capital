@@ -1,110 +1,120 @@
-<body style="background: rgb(28,27,33);
+<body
+    style="background: rgb(28,27,33);
 background: linear-gradient(180deg, rgba(28,27,33,0.9416141456582633) 0%, rgba(9,121,105,1) 35%, rgba(0,241,255,1) 100%);">
 
-<div class="container">
-    <h1 class="head"> To Get Started ,Link Your Bank Accounts </h1>
-    <div class="form-inline waves-light" mdbWavesEffect>
-        <p class="head">Or select from these financial insititution</p>
+    <div class="container">
+        <h1 class="head"> To Get Started ,Link Your Bank Accounts </h1>
+        <div class="form-inline waves-light" mdbWavesEffect>
+            <p class="head">Or select from these financial insititution</p>
 
-         <!-- Bank Acccount Pictures -->
-        <div class="flex-container">
-            <div>
-                <img src="../../images/capital.jpg" width="100px" alt="">
-            </div><br><br><br>
-            <div>
-                <img src="../../images/citi.jpg"  class="img1" alt="">
+            <!-- Bank Acccount Pictures -->
+            <div class="flex-container">
+                <div>
+                    <img src="../../images/capital.jpg" width="100px" alt="">
+                </div><br><br><br>
+                <div>
+                    <img src="../../images/citi.jpg" class="img1" alt="">
+                </div>
+                <div>
+                    <img src="../../images/Bank.png" class="img2" alt="">
+                </div>
+                <div>
+                    <img src="../../images/chase.png" class="img3" alt="">
+                </div>
+                <div>
+                    <img src="../../images/charles.png" class="img4" alt="">
+                </div>
+                <div>
+                    <img src="../../images/chase.png" class="img3" alt="">
+                </div>
+
             </div>
-            <div>
-                <img src="../../images/Bank.png" class="img2" alt="">
-            </div>  
-            <div>
-                <img src="../../images/chase.png" class="img3" alt="">
+
+            <div class="paragraph">
+                <p class="head">"A powerful way to understand all accounts at once.
+                    It gives quick feedback on which stocks and accounts are performing well and offers advice on how to
+                    modify your portfolio to better match your risks.
+                    Much better than MINT."</p>
             </div>
-            <div>
-                <img src="../../images/charles.png" class="img4" alt="">
-            </div>
-            <div>
-                <img src="../../images/chase.png" class="img3" alt="">
-            </div>
-            
-          </div>
 
-          <div class="paragraph">
-              <p class="head">"A powerful way to understand all accounts at once. 
-                  It gives quick feedback on which stocks and accounts are performing well and offers advice on how to modify your portfolio to better match your risks. 
-                  Much better than MINT."</p>
-          </div>
-      
-        <!-- Displaying Forms and setting input fields -->
-      <div class="form">
-        <form [formGroup]="cardDetails" >
-         <div class="inputfield">
-            <label for="PayeeName" class="head"> Payee Name</label>
-            <input type="text" class="form-control" id="PayeeName" formControlName="PayeeName" name="PayeeName">
-         </div> 
-         
-          <div class="inputfield">
-            <label for="AccountNumber"  class="head">AccountNumber</label>
-            <input type="text" class="form-control" id="AccountNumber" formControlName="AccountNumber" name="AccountNumber">
-            </div>  
-           
-         <div class="inputfield">
-            <label for="Re-Enter AccountNumber"  class="head">Re-Enter AccountNumber</label>
-            <input type="Re-Enter AccountNumber" class="form-control" id="Re-Enter AccountNumber" formControlName="Re-Enter AccountNumber" name="Re-Enter AccountNumber">
-         </div>  
-         
-        <div class="inputfield">
-          <label for="IFSCcode"  class="head">IFSC code</label>
-          <input type="IFSCcode" class="form-control" id="IFSCcode" formControlName="IFSCcode" name="IFSCcode">
-         </div> 
-         
-         <div class="inputfield">
-          <label for="AccountType"  class="head">Account Type </label>
-          <input type="AccountTypeAge" class="form-control" id="AccountType" formControlName="AccountType" name="AccountType">
-         </div> 
-        
-          <div class="inputfield">
-            
-             <label for="Transferto" id="Transferto"  class="head">Transfer to </label><br>
-              <input type="radio" id="Transferto" name="CapitalOne" value="CapitalOne" class="error" formControlName="Transferto">CapitalOne
-              <input type="radio" id="Transferto" name="Transferto" value="BankOfAmerica" class="error" formControlName="Transferto">BankOfAmerica
-              <input type="radio" id="Transferto" name="Transferto" value="Citi" class="error" formControlName="Transferto">Citi
-              <input type="radio" id="Transferto" name="Transferto" value="Chase" class="error" formControlName="Transferto">Chase
-              <input type="radio" id="Transferto" name="Transferto" value="CharlesSchwab" class="error" formControlName="Transferto">CharlesSchwab
-               <input type="radio" id="Transferto" name="Transferto" value="NavyFederal" class="error" formControlName="Transferto">NavyFederal
-               
-         </div> 
-         <div class="inputfield">
-          <label for="InvestingAmount"  class="head">InvestingAmount</label>
-          <input type="text" class="form-control" id="InvestingAmount" formControlName="InvestingAmount" name="InvestingAmount">
-          
-         
-         <div class="inputfield">
-            <label  class="head">Phone Number</label>
-            <input type="number" class="form-control" id="PhoneNumber" formControlName="PhoneNumber" name="PhoneNumber">
-         </div>
-         
-        <div class="inputfield">
-            <label  class="head">Type Your Own(Optional)</label>
-            <input type="text" class="form-control" id="TypeYourOwn" formControlName="TypeYourOwn" name="TypeYourOwn">
-         </div> 
-        
-        
-         
-         <div class="inputfield">
-          <button type="button"  class="btn" (click)="onSubmit(this.cardDetails.value)">Invest</button>
-         
-          <button class="btn" (click)="showSpinner()">Next</button>
+            <!-- Displaying Forms and setting input fields -->
+            <div class="form">
+                <form [formGroup]="cardDetails">
+                    <div class="inputfield">
+                        <label for="PayeeName" class="head"> Payee Name</label>
+                        <input type="text" class="form-control" id="PayeeName" formControlName="PayeeName"
+                            name="PayeeName">
+                    </div>
 
-        </div>
-      
-      </div> 
-      <ngx-spinner size="medium" [type]="typeSelected"></ngx-spinner>
-      
-          
-    
+                    <div class="inputfield">
+                        <label for="AccountNumber" class="head">AccountNumber</label>
+                        <input type="text" class="form-control" id="AccountNumber" formControlName="AccountNumber"
+                            name="AccountNumber">
+                    </div>
+
+                    <div class="inputfield">
+                        <label for="Re-Enter AccountNumber" class="head">Re-Enter AccountNumber</label>
+                        <input type="Re-Enter AccountNumber" class="form-control" id="Re-Enter AccountNumber"
+                            formControlName="Re-Enter AccountNumber" name="Re-Enter AccountNumber">
+                    </div>
+
+                    <div class="inputfield">
+                        <label for="IFSCcode" class="head">IFSC code</label>
+                        <input type="IFSCcode" class="form-control" id="IFSCcode" formControlName="IFSCcode"
+                            name="IFSCcode">
+                    </div>
+
+                    <div class="inputfield">
+                        <label for="AccountType" class="head">Account Type </label>
+                        <input type="AccountTypeAge" class="form-control" id="AccountType" formControlName="AccountType"
+                            name="AccountType">
+                    </div>
+
+                    <div class="inputfield">
+
+                        <label for="Transferto" id="Transferto" class="head">Transfer to </label><br>
+                        <input type="radio" id="Transferto" name="CapitalOne" value="CapitalOne" class="error"
+                            formControlName="Transferto">CapitalOne
+                        <input type="radio" id="Transferto" name="Transferto" value="BankOfAmerica" class="error"
+                            formControlName="Transferto">BankOfAmerica
+                        <input type="radio" id="Transferto" name="Transferto" value="Citi" class="error"
+                            formControlName="Transferto">Citi
+                        <input type="radio" id="Transferto" name="Transferto" value="Chase" class="error"
+                            formControlName="Transferto">Chase
+                        <input type="radio" id="Transferto" name="Transferto" value="CharlesSchwab" class="error"
+                            formControlName="Transferto">CharlesSchwab
+                        <input type="radio" id="Transferto" name="Transferto" value="NavyFederal" class="error"
+                            formControlName="Transferto">NavyFederal
+
+                    </div>
+                    <div class="inputfield">
+                        <label for="InvestingAmount" class="head">InvestingAmount</label>
+                        <input type="text" class="form-control" id="InvestingAmount" formControlName="InvestingAmount"
+                            name="InvestingAmount">
+
+
+                        <div class="inputfield">
+                            <label class="head">Phone Number</label>
+                            <input type="number" class="form-control" id="PhoneNumber" formControlName="PhoneNumber"
+                                name="PhoneNumber">
+                        </div>
+
+                        <div class="inputfield">
+                            <label class="head">Type Your Own(Optional)</label>
+                            <input type="text" class="form-control" id="TypeYourOwn" formControlName="TypeYourOwn"
+                                name="TypeYourOwn">
+                        </div>
 
 
 
+                        <div class="inputfield">
+                            <button type="button" class="btn" (click)="onSubmit(this.cardDetails.value)">Invest</button>
+                            <a href="cardview" type="button" class="btn">View Details</a>
 
 
+                            <button class="btn" (click)="showSpinner()">Next</button>
+
+                        </div>
+
+                    </div>
+                    <ngx-spinner size="medium" [type]="typeSelected"></ngx-spinner>
