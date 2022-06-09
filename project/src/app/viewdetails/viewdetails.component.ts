@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DaoserviceService } from '../daoservice.service';
-// import * as lodash from 'lodash'
+
 @Component({
   selector: 'app-viewdetails',
   templateUrl: './viewdetails.component.html',
