@@ -119,7 +119,7 @@ export class StartedformComponent implements OnInit {
       }
       this.couchService.emailValidation(query).subscribe((response:any)=>{
         console.log(response)
-        if(response.docs.length >1){
+        if(response.docs.length >=1){
         this.toastr.error("email already exist");
         this.submitted =false
         }

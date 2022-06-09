@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+
 
 
 @Component({
@@ -6,4 +8,14 @@ import { Component } from '@angular/core';
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
-export class DashboardComponent {}
+export class DashboardComponent {
+  constructor(private router:Router){
+
+  }
+  logout() {
+    localStorage.clear();
+    this.router.navigate(['/home']);
+   }
+  
+  
+}

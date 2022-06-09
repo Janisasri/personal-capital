@@ -1,4 +1,5 @@
 
+
 <div style="background-color:black">
     <div class="container-fluid">
         
@@ -10,25 +11,23 @@
             <h3 style="color: cyan;">Sign in now.</h3><br>
             <form [formGroup]="loginform">
                 <div class="form-group">
-                  <label for="exampleInputusername" style="color: cyan;">EmailId</label>
-                  <input type="text" id="emailId" formControlName="emailId" class="form-control"  aria-describedby="emailIdHelp" placeholder="Enter emailId" style="background-color: black; border-color: cyan; border-radius: 15px;">
+                  <label for="exampleInputusername" style="color: cyan;"><strong>EMAIL ID</strong></label>
+                  <input type="text" id="emailId" formControlName="emailId" class="form-control"  aria-describedby="emailIdHelp" placeholder="ENTER YOUR EMAIL ID" style="background-color: black; border-color: cyan; border-radius: 15px;">
                   <div class="help-block text-danger" *ngIf="emailId.touched">
-                    <span *ngIf="emailId.errors?.required"> emailId is REQUIRED!!! </span>
-                    <span *ngIf="emailId.errors?.emailId"> emailId is invalid!!! </span> 
+                    <span *ngIf="emailId.errors?.required"> email Id is REQUIRED!!! </span>
+                    <span *ngIf="emailId.errors?.emailId"> email Id is invalid!!! </span> 
                 </div>
-                
-                
                 </div>
                 <div class="form-group">
-                  <label for="exampleInputPassword1" style="color: cyan;">Password</label>
-                  <input type="password" class="form-control" id="Password" formControlName="Password" placeholder="Password" style="background-color: black; border-color: cyan; border-radius: 15px;"><br><br>
+                  <label for="exampleInputPassword1" style="color: cyan;"><strong>PASSWORD</strong></label>
+                  <input type="password" class="form-control" id="Password" formControlName="Password" placeholder="ENTER YOUR PASSWORD" style="background-color: black; border-color: cyan; border-radius: 15px;"><br><br>
                   <div class="help-block text-danger" *ngIf="Password.touched">
                     <span *ngIf="Password.errors?.required"> Password is REQUIRED!!! </span>
                     <span *ngIf="Password.errors?.Password"> Password is invalid!!! </span>
                 </div>
                 </div>
                 
-                <button type="submit" class="btn"  (click)="login(this.loginform.value)">Login</button>
+                <button type="submit" class="btn" (click)="login(this.loginform.value)">Login</button>
               </form>
 
         </div>

@@ -16,7 +16,7 @@ export class nodeservice {
     test_get(id:any)
   {
     console.log("id",id)
-    return this.http.get<any>('http://localhost:8000/getdata/' +id);
+    return this.http.post<any>('http://localhost:8000/getdata/' ,id);
 }
   }
  

@@ -3,6 +3,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup,Validators,AbstractControl} from '@angular/forms';
 import { DaoserviceService } from '../daoservice.service';
 import { ToastrService } from 'ngx-toastr';
+import { NgxSpinnerService } from 'ngx-spinner';
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-carddetails',
   templateUrl: './carddetails.component.html',
@@ -11,7 +14,8 @@ import { ToastrService } from 'ngx-toastr';
 export class CarddetailsComponent implements OnInit {
   cardDetails:FormGroup;
   submitted=false;
-
+   
+    typeSelected:string;
   //Array object Declaration//
   cardrecord:any={
     PayeeName:'',
@@ -22,8 +26,7 @@ export class CarddetailsComponent implements OnInit {
     InvestingAmount:'',
     PhoneNumber:'',
     TypeYourOwn:'',
-
-  };
+   };
 
   //Object using to fetching//
   alluser1: any;
@@ -33,7 +36,8 @@ export class CarddetailsComponent implements OnInit {
   idValue1: any;
   val1: any;
 
-  constructor(private fb:FormBuilder,private api:DaoserviceService,private http:HttpClient,private toastr: ToastrService) {
+  constructor(private fb:FormBuilder,public spinnerService:NgxSpinnerService,private api:DaoserviceService,private http:HttpClient,private toastr: ToastrService,private router:Router) {
+    this.typeSelected = 'ball-fussion';
     this.cardDetails=this.fb.group({
       PayeeName:[this.cardrecord.PayeeName],
       AccountNumber:[this.cardrecord. AccountNumber],
@@ -45,6 +49,17 @@ export class CarddetailsComponent implements OnInit {
       TypeYourOwn:[this.cardrecord.TypeYourOwn],
       });
    }
+
+   public showSpinner():void {
+     this.spinnerService.show();
+     
+
+     setTimeout(() => {
+       this.spinnerService.hide();
+     this.router.navigate(['/view'])
+    },3000);
+     
+}
 
   ngOnInit(): void {
 

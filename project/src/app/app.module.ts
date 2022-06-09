@@ -22,6 +22,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { CommonModule } from '@angular/common';
 import { DashboardcontentComponent } from './dashboardcontent/dashboardcontent.component';
 import { SavingplannerComponent } from './savingplanner/savingplanner.component';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 
 @NgModule({
@@ -50,6 +51,7 @@ import { SavingplannerComponent } from './savingplanner/savingplanner.component'
     ReactiveFormsModule,
     HttpClientModule,
     CommonModule,
+    NgxSpinnerModule,
     BrowserAnimationsModule, // required animations module
     ToastrModule.forRoot(), 
   ],

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { LogoComponent } from 'angular-bootstrap-md';
 import { AddinfoComponent } from './addinfo/addinfo.component';
 import { CarddetailsComponent } from './carddetails/carddetails.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -15,6 +16,7 @@ import { ViewdetailsComponent } from './viewdetails/viewdetails.component';
 
 
 const routes: Routes = [
+
   { path:'',component:HomepageComponent},
   { path:'home',component:HomepageComponent},
   { path:'start', component:StartedformComponent},

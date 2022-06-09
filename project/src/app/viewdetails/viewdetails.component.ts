@@ -7,12 +7,6 @@ import * as lodash from 'lodash'
   styleUrls: ['./viewdetails.component.css']
 })
 export class ViewdetailsComponent implements OnInit {
-   
-  //Object using to fetch the data//
-  // userData:{
-  //   id:string
-  // }
-  // userId:any;
   alluser: any = [];
   alluserData: any;
   store: any = []

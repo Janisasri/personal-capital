@@ -120,7 +120,7 @@ onSubmit(Formvalue: any) {
   
   console.log("from form", Formvalue);
   this.api.storeData(Formvalue).subscribe((data) => {
-
+     
     console.log("data returned from server", data);
     this.toastr.success("Form Submitted Succesfully,Click Next button");
     this.addinfo.reset();

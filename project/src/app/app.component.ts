@@ -2,6 +2,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -13,9 +14,9 @@ export class AppComponent {
     id:string;
   };
   userId:any;
- 
-
-  constructor( private router: Router) {
+  
+constructor( private router: Router) {
+    
     const userData:any =  localStorage.getItem('obj1');
      if(userData == 'undefined' || userData == null){
       console.log("heloo");
@@ -25,4 +26,5 @@ export class AppComponent {
      this.router.navigate(['/login1']);
      }
     }
-  }
+ 
+}

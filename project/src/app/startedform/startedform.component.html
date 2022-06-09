@@ -1,10 +1,13 @@
+ 
+ 
  <body style=" background: rgb(28,27,33);
  background: linear-gradient(180deg, rgba(28,27,33,0.9416141456582633) 0%, rgba(9,121,105,1) 35%, rgba(0,241,255,1) 100%);">
  >>
-
+ 
   <h2 class="text_1">Congrats, you’re a few steps away from financial empowerment.</h2><br>
   <p class="para">Sign up now to get free, professional-grade financial tools</p><br>
   <!-- Forms Input to Register -->
+  <div class="container">
  <div class="register-form">
     <form [formGroup]="checkout">
       <div class="form-group">
@@ -114,7 +117,9 @@
       </div>
 </form>
 </div>
+</div>
 </body>
+<router-outlet></router-outlet>
 
 
 
