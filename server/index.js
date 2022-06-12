@@ -7,7 +7,7 @@ const port = 8000;
 
 
 app.use(cors({
-  origin: '*'
+  origin: 'http://localhost:4200'
 }));
 app.use(bodyParser.json());
 
