@@ -25,15 +25,16 @@ export class DaoserviceService {
   };
   dataBaseName = "personal-capital"
    constructor(private http: HttpClient) {
-    const userData:any =  JSON.parse(localStorage.getItem('obj1') || '{}');
+    let userData:any =  localStorage.getItem('obj1') || '{}';
     
     
    
 
     if(userData == 'undefined' || userData == null){
-     console.log("hello");
+     console.log("a");
     }
     else if(userData != undefined &&  userData != null && userData['_id']) {
+      userData = JSON.parse(userData)
     this.userDataId =  userData['_id'];
   }
    
@@ -49,7 +50,7 @@ export class DaoserviceService {
       "NetWorth": formData['NetWorth'],
       "Retirement":formData['Retirement'] ,
       "Gender": formData['Gender'],
-      "Location": formData['Location'],
+      "locationInfo": formData['locationInfo'],
       "PhoneNumber": formData['PhoneNumber'],
       "Address": formData['Address'],
       "Postal": formData['Postal'],
@@ -88,7 +89,6 @@ export class DaoserviceService {
     console.log("From api", formData);
     let data2 ={
       "Plan": formData['Plan'],
-      "text": formData['text'],
       "type": "investInfo",
       "userInfo":this.userDataId
      

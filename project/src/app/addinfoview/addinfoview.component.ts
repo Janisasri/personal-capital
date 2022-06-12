@@ -33,7 +33,7 @@ export class AddinfoviewComponent implements OnInit {
        this.svc.getAllData(this.lookupIdArray).subscribe((ress:any)=>{
         const lookupData = ress.rows.map(el=>el.doc)
         this.alluser.forEach(element => {
-          const location = lookupData.filter(el=>el['id'] === element['locationInfo'])[0]
+          const location = lookupData.filter(el=>el['_id'] === element['locationInfo'])[0]
           element['Location'] = location['Location']
         });
         console.log(ress)

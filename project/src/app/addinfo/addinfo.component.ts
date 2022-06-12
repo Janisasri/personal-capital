@@ -5,7 +5,6 @@ import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 
-
 @Component({
   selector: 'app-addinfo',
   templateUrl: './addinfo.component.html',
@@ -26,9 +25,9 @@ export class AddinfoComponent implements OnInit {
     locationInfo:'',
     PhoneNumber:'',
     Address:'',
-    
     checkbox:'',
     };
+    
 
     //Objects Using to fetch//
   alluser: any = [];
@@ -37,7 +36,8 @@ export class AddinfoComponent implements OnInit {
   obj: any;
   idValue: any;
   val: any;
-  res:any
+  res:any;
+  fetch:any
   
   constructor(private fb:FormBuilder,private api:DaoserviceService, private http:HttpClient,private router:Router,private toastr: ToastrService) {
      this.fetchlocationdetails();
@@ -70,7 +70,6 @@ export class AddinfoComponent implements OnInit {
         locationInfo: ['',Validators.required],
         PhoneNumber:['',Validators.required],
         Address: ['',Validators.required],
-        Postal: ['',Validators.required],
         checkbox: ['',Validators.required],
       }
     );
@@ -114,20 +113,19 @@ export class AddinfoComponent implements OnInit {
     return this.addinfo.controls;
    }
 
- 
   
-  //Posting data to CouchDB//
+   
+//Posting data to CouchDB//
 onSubmit(Formvalue: any) {
   this.api.fetchData("additionalInfo").subscribe(res =>{
     this.val=res;
-    console.log(this.val);
     console.log(this.val.rows.length);
-    if(this.val.rows.length < 1){
+   if(this.val.rows.length < 1){
       this.router.navigate(['/addinfo'], )
 
   console.log("from form", Formvalue);
-  this.api.storeData(Formvalue).subscribe((data) => {
-
+  this.api.storeData(Formvalue,).subscribe((data) => {
+  
    
     console.log("data returned from server", data);
     this.toastr.success("Form Submitted Succesfully,Click Next button");
@@ -139,7 +137,8 @@ onSubmit(Formvalue: any) {
   });
 }
 else{
-  this.toastr.warning("Data Exists");
+  this.toastr.warning("You cannot enter form Again!!,Click Edit");
+  
 }
 });
  }

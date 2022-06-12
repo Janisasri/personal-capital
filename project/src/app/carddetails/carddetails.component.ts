@@ -105,7 +105,7 @@ export class CarddetailsComponent implements OnInit {
     return this.cardDetails.controls;
    }
 
-  //  Reset Our Form
+ 
   
   
    //Posting our Form data to CouchDB// 

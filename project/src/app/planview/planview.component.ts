@@ -18,7 +18,7 @@ export class PlanviewComponent implements OnInit {
     this.fetchplanView();
   }
   fetchplanView(){
-    this.svc.fetchData("cardInfo").subscribe(res =>{
+    this.svc.fetchData("investInfo").subscribe(res =>{
       console.log(res);
       let data3=res['rows'];
       this.alluser = data3.map(item => item.doc)

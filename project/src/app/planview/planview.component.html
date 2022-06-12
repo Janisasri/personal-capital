@@ -31,11 +31,14 @@
                                 <caption>Plans Details</caption>
                                 <thead>
                                     <tr>
+                                        <th scope="col">SNo</th>
                                         <th scope="col">Plans</th>
+
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr *ngFor="let info of alluser">
+                                    <tr *ngFor="let info of alluser; let i= index">
+                                        <td>{{i+1}}</td>
                                         <td>{{info.Plan}}</td>
                                     </tr>
                                 </tbody>

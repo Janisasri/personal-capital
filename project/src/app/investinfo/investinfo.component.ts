@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { AbstractControl, FormBuilder, FormGroup } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { DaoserviceService } from '../daoservice.service';
 import { ToastrService } from 'ngx-toastr';
 
@@ -12,8 +12,8 @@ import { ToastrService } from 'ngx-toastr';
 export class InvestinfoComponent implements OnInit {
   investInfo:FormGroup;
   investRecord:any={
-    Plan:'',
-    text:'',
+    Plan:''
+   
   };
   //Object Using to fetch//
   alluser2: any;
@@ -22,31 +22,34 @@ export class InvestinfoComponent implements OnInit {
   obj2: any;
   idValue2: any;
   val2: any;
+  val:any;
   constructor(private fb:FormBuilder,private svc:DaoserviceService,private http:HttpClient,private toastr: ToastrService) {
     this.investInfo=this.fb.group({
-      Plan:[this.investRecord.Plan],
-      text:[this.investRecord.text]
+      Plan:[this.investRecord.Plan]
     });
    }
 
   ngOnInit(): void {
-    console.log("Hello");
+   this.investRecord=this.fb.group({
+      Plan:['',Validators.required]
+   });
   }
   get Plan() {
     return this.investRecord.get('Plan')!;
   }
-  get text() {
-    return this.investRecord.get('text')!;
-  }
+  
   get f(): {[key:string]:AbstractControl}{
     return this.investInfo.controls;
+  }
+  selectPlan(){
+    return this.investInfo.value.Plan;
+    // console.log(this.investInfo.value.Plan,"Plannnnnnnnn")
   }
 
   //Posting the data to CouchDB//
   onSubmit(Formvalue:any){
-   
-    console.log("from form", Formvalue);
-    this.svc.investAdd(Formvalue).subscribe((data) => {
+     console.log("from form", Formvalue);
+     this.svc.investAdd(Formvalue).subscribe((data) => {
       console.log("data returned from server", data);
       this.toastr.success("Submitted Succesfully,Click Next Button");
       this.investInfo.reset();
