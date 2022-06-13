@@ -15,6 +15,7 @@ app.use(cors({
 app.use(bodyParser.json());
 
 
+
 app.post('/postdata', function (req, res) {
   const objectnew = {
     fullName: req.body.fullname,
