@@ -45,7 +45,7 @@
 
 1.  Download or clone the repository to your local machine:
 
-<!--     $ git clone https://github.com/LivinRinoshiya/courier-parcel.git -->
+     $ git clone https://github.com/Janisasri/personal-capital
 
 2.  Run npm install inside the downloaded/cloned folder:
 
