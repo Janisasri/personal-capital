@@ -33,7 +33,7 @@ export class DaoserviceService {
     if(userData == 'undefined' || userData == null){
      console.log("a");
     }
-    else if(userData != undefined &&  userData != null && userData['_id']) {
+    else if(userData != undefined &&  userData != null ) {
       userData = JSON.parse(userData)
     this.userDataId =  userData['_id'];
   }
