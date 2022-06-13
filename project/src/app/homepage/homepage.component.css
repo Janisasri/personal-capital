@@ -312,3 +312,7 @@ margin-top: 15px;
 background:black;
 padding: 7px 0;
 color: cyan; }
+
+.form-group input[type=text] {
+  color: black;
+}

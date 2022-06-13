@@ -1,133 +1,142 @@
-
-
 <div style="background-color:black">
-    <div class="container-fluid">
-        
-        <div class="row">
-          <div class="col-sm-3 col-md-6 col-lg-4" style="background-color:black">
-            <h1 class="head" style="color:cyan ; font-size: larger;">Wealth Management</h1><br>
-            <p class="para" style="color: cyan; font-size: 30px;">Get personalized advice from an advisor who listens</p><br>
+  <div class="container-fluid">
 
-            <h3 style="color: cyan;">Sign in now.</h3><br>
-            <form [formGroup]="loginform">
-                <div class="form-group">
-                  <label for="exampleInputusername" style="color: cyan;"><strong>EMAIL ID</strong></label>
-                  <input type="text" id="emailId" formControlName="emailId" class="form-control"  aria-describedby="emailIdHelp" placeholder="ENTER YOUR EMAIL ID" style="background-color: black; border-color: cyan; border-radius: 15px;">
-                  <div class="help-block text-danger" *ngIf="emailId.touched">
-                    <span *ngIf="emailId.errors?.required"> email Id is REQUIRED!!! </span>
-                    <span *ngIf="emailId.errors?.emailId"> email Id is invalid!!! </span> 
-                </div>
-                </div>
-                <div class="form-group">
-                  <label for="exampleInputPassword1" style="color: cyan;"><strong>PASSWORD</strong></label>
-                  <input type="password" class="form-control" id="Password" formControlName="Password" placeholder="ENTER YOUR PASSWORD" style="background-color: black; border-color: cyan; border-radius: 15px;"><br><br>
-                  <div class="help-block text-danger" *ngIf="Password.touched">
-                    <span *ngIf="Password.errors?.required"> Password is REQUIRED!!! </span>
-                    <span *ngIf="Password.errors?.Password"> Password is invalid!!! </span>
-                </div>
-                </div>
-                
-                <button type="submit" class="btn" (click)="login(this.loginform.value)">Login</button>
-              </form>
+    <div class="row">
+      <div class="col-sm-3 col-md-6 col-lg-4" style="background-color:black">
+        <h1 class="head" style="color:cyan ; font-size: larger;">Wealth Management</h1><br>
+        <p class="para" style="color: cyan; font-size: 30px;">Get personalized advice from an advisor who listens</p>
+        <br>
 
-        </div>
-          <div class="col-sm-9 col-md-6 col-lg-8" style="background-color:black;">
-            <img src="../../images/199-scaled-e1597126999803.jpg" width="100%" height="100%" alt="">
-            
-          
+        <h3 style="color: cyan;">Sign in now.</h3><br>
+        <form [formGroup]="loginform">
+          <div class="form-group">
+            <label for="exampleInputusername" style="color: cyan;"><strong>EMAIL ID</strong></label>
+            <input type="text" id="emailId" formControlName="emailId" class="form-control"
+              aria-describedby="emailIdHelp" placeholder="ENTER YOUR EMAIL ID"
+              style="border-color: cyan; border-radius: 15px;">
+            <div class="help-block text-danger" *ngIf="emailId.touched">
+              <span *ngIf="emailId.errors?.required"> email Id is REQUIRED!!! </span>
+              <span *ngIf="emailId.errors?.emailId"> email Id is invalid!!! </span>
+            </div>
           </div>
-        </div>
-      </div><br>
-      <br><br>
-      
-        
-
-    <!-- Cards showing -->
-    <div class="row row-cols-1 row-cols-md-2 g-4">
-      <div class="col" >
-        <div class="card" style="background-color: black;">
-          
-          <div class="card-body">
-            <h5 class="card-title"><em class="fa fa-globe"></em><br>Smart Weighting™</h5>
-            <p class="card-text">By limiting exposure to any one sector,
-              size or style in favor of greater diversification and balance,
-              you are better protected against downside risk when a
-              particular market or segment declines.</p>
+          <div class="form-group">
+            <label for="exampleInputPassword1" style="color: cyan;"><strong>PASSWORD</strong></label>
+            <input type="password" class="form-control" id="Password" formControlName="Password"
+              placeholder="ENTER YOUR PASSWORD" style=" border-color: cyan; border-radius: 15px;"><br><br>
+            <div class="help-block text-danger" *ngIf="Password.touched">
+              <span *ngIf="Password.errors?.required"> Password is REQUIRED!!! </span>
+              <span *ngIf="Password.errors?.Password"> Password is invalid!!! </span>
+            </div>
           </div>
+
+          <button type="submit" class="btn" (click)="login(this.loginform.value)">Login</button>
+        </form>
+
+      </div>
+      <div class="col-sm-9 col-md-6 col-lg-8" style="background-color:black;">
+        <img src="../../images/199-scaled-e1597126999803.jpg" width="100%" height="100%" alt="">
+
+
+      </div>
+    </div>
+  </div><br>
+  <br><br>
+
+
+
+  <!-- Cards showing -->
+  <div class="row row-cols-1 row-cols-md-2 g-4">
+    <div class="col">
+      <div class="card" style="background-color: black;">
+
+        <div class="card-body">
+          <h5 class="card-title"><em class="fa fa-globe"></em><br>Smart Weighting™</h5>
+          <p class="card-text">By limiting exposure to any one sector,
+            size or style in favor of greater diversification and balance,
+            you are better protected against downside risk when a
+            particular market or segment declines.</p>
         </div>
       </div>
-    
-      <div class="col">
-        <div class="card">
-         
-          <div class="card-body">
-            <h5 class="card-title"><em class="fa fa-credit-card-alt"></em><br>Tax Optimization</h5>
-            <p class="card-text">Tax location places assets in different account types to help minimize taxes (higher yield securities being placed in tax-sheltered accounts when possible). 
-              Tax-loss harvesting can offset realized capital gains and be written off against income up to relevant IRS limits.</p>
-          </div>
+    </div>
+
+    <div class="col">
+      <div class="card">
+
+        <div class="card-body">
+          <h5 class="card-title"><em class="fa fa-credit-card-alt"></em><br>Tax Optimization</h5>
+          <p class="card-text">Tax location places assets in different account types to help minimize taxes (higher
+            yield securities being placed in tax-sheltered accounts when possible).
+            Tax-loss harvesting can offset realized capital gains and be written off against income up to relevant IRS
+            limits.</p>
         </div>
       </div>
-    
-      <div class="col">
-        <div class="card">
-          
-          <div class="card-body">
-            <h5 class="card-title"><em class="fa fa-bell-o"></em><br>Intelligent Rebalancing</h5>
-            <p class="card-text">Ongoing rebalancing, that occurs when the market presents opportunities, 
-              can help avoid costly emotional mistakes and helps you buy low, sell high, 
-              and remain well-diversified.
-               Our research shows that regular rebalancing can significantly enhance portfolio value over time.</p>
-          </div>
+    </div>
+
+    <div class="col">
+      <div class="card">
+
+        <div class="card-body">
+          <h5 class="card-title"><em class="fa fa-bell-o"></em><br>Intelligent Rebalancing</h5>
+          <p class="card-text">Ongoing rebalancing, that occurs when the market presents opportunities,
+            can help avoid costly emotional mistakes and helps you buy low, sell high,
+            and remain well-diversified.
+            Our research shows that regular rebalancing can significantly enhance portfolio value over time.</p>
         </div>
       </div>
+    </div>
 
 
-      <div class="container-3">
+    <div class="container-3">
       <div class="col">
         <div class="card">
-         
+
           <div class="card-body">
             <h5 class="card-title"><em class="fa fa-clone"></em><br>Dynamic Portfolio Allocation</h5>
-            <p class="card-text">Because we see your complete financial picture, we can provide an efficient allocation. As your life evolves, 
-              we will recommend allocation adjustments to keep the strategy current with your ever changing situation.</p>
+            <p class="card-text">Because we see your complete financial picture, we can provide an efficient allocation.
+              As your life evolves,
+              we will recommend allocation adjustments to keep the strategy current with your ever changing situation.
+            </p>
           </div>
         </div>
       </div>
-      
-   <br><br>
-      
-    
-  </div>
+
+      <br><br>
+
+
+    </div>
   </div>
 </div><br>
 
-               <!-- Content paragraph -->
+<!-- Content paragraph -->
 <div class="header" style="background-color: black;">
   <h2 class="head_2">What to Expect</h2>
 </div>
 
 <div class="row" style="background-color: black;">
   <div class="leftcolumn">
-    <div class="card" >
+    <div class="card">
       <h2 class="head_3">What you’ll cover on your first call.</h2>
       <h5 class="head_4">We don’t believe in a “one size fits all” portfolio.
-        Our approach is tailored to you and your goals. Together, 
-        we’ll create a plan that’s based on your preferences, 
+        Our approach is tailored to you and your goals. Together,
+        we’ll create a plan that’s based on your preferences,
         and what stage you are in your life.</h5>
       <div class="fakeimg">
-      <img src="../../images/head2.avif" alt="">
-    </div>
+        <img src="../../images/head2.avif" alt="">
+      </div>
     </div>
     <div class="card">
-      <h2 class="head_3" >What you’ll cover on your first call.</h2>
-      
+      <h2 class="head_3">What you’ll cover on your first call.</h2>
+
       <div class="fakeimg"></div>
-    <div class="para">
-      <h4><em class="fa fa-check"></em>How you can build a more tax-efficient portfolio</h4><hr>
-       <h4><em class="fa fa-check"></em>Insights on cash flow, spending, and budgeting</h4><hr>
-       <h4><em class="fa fa-check"></em>401k advice, and our approach to diversification</h4><hr>
-    </div>
-       
+      <div class="para">
+        <h4><em class="fa fa-check"></em>How you can build a more tax-efficient portfolio</h4>
+        <hr>
+        <h4><em class="fa fa-check"></em>Insights on cash flow, spending, and budgeting</h4>
+        <hr>
+        <h4><em class="fa fa-check"></em>401k advice, and our approach to diversification</h4>
+        <hr>
+      </div>
+
     </div>
   </div>
   <div class="rightcolumn">
@@ -136,118 +145,146 @@
       <h4 class="head_3">Our Performance</h4>
       <div class="fakeimg">
         <img src="../../images/head5.avif" width="150px" alt="">
-    </div>
-    
+      </div>
+
       <button class="btn1">Personal strategy</button>
     </div>
     <div class="card">
-      <h4 class="para">Make Your Employer-Sponsored Retirement Plan Work For You</h4><hr>
-      
-      <p class="para">Personal Strategy+ applies the personalized care and convenience you’ve come to expect from Personal Capital to your employer-sponsored retirement accounts, 
-         including 401k and 403b. We’ll optimize your plan with holistic allocation, regular monitoring, and rebalancing. With Personal Capital,
-         planning for retirement can be almost as relaxing as retirement itself.</p>
-      
+      <h4 class="para">Make Your Employer-Sponsored Retirement Plan Work For You</h4>
+      <hr>
+
+      <p class="para">Personal Strategy+ applies the personalized care and convenience you’ve come to expect from
+        Personal Capital to your employer-sponsored retirement accounts,
+        including 401k and 403b. We’ll optimize your plan with holistic allocation, regular monitoring, and rebalancing.
+        With Personal Capital,
+        planning for retirement can be almost as relaxing as retirement itself.</p>
+
     </div>
     <div class="card">
       <button class="btn1"><span>Start Today</span></button>
     </div>
   </div>
 </div>
-               <!-- Flip cards showing -->
+<!-- Flip cards showing -->
 
 <div class="container_2" style="background-color: black;">
- 
 
-    <div class="col">
-<div class="flip-card">
-  <div class="flip-card-inner">
-    <div class="flip-card-front">
-      <h2 class="head_5">Investment Services</h2><hr>
-      <h4 class="head_6">$100k to $200k investment assets</h4>
-     
-      <i class="fa fa-question-circle" aria-hidden="true"></i>
-    </div>
-    <div class="flip-card-back">
-      <h5><em class="fa fa-check"></em>Unlimited advice and retirement planning help from from financial advisor</h5><hr>
-      <h5><em class="fa fa-check"></em>A professionally managed ETF portfolio with reviews upon request</h5><hr>
-      <h5><em class="fa fa-check"></em>State-of-the-art digital tools</h5> 
-       <h5><em class="fa-solid fa-badge-dollar"></em></h5>
-    </div>
-  </div>
-</div>
-</div>
 
-<div class="col">
-  <div class="flip-card">
-    <div class="flip-card-inner">
-      <div class="flip-card-front">
-        <h2 class="head_5">Wealth Management</h2><hr>
-        <h4 class="head_6">Over $200K to $1M investment assets</h4>
-        <i class="fa fa-question-circle" aria-hidden="true"></i>
-      </div>
-      <div class="flip-card-back">
-        <h5><em class="fa fa-check"></em>Two dedicated financial advisor</h5><hr>
-        <h5><em class="fa fa-check"></em>Specialists in real estate,stock option,and more</h5><hr>
-        <h5><em class="fa fa-check"></em>A customized portfolio with regular reviews</h5><hr>
-        <h5><em class="fa fa-check"></em>Tax optimization,thanks to individual stock investment</h5><hr>
-        
-         <h5><em class="fa-solid fa-badge-dollar"></em></h5>
+  <div class="col">
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <h2 class="head_5">Investment Services</h2>
+          <hr>
+          <h4 class="head_6">$100k to $200k investment assets</h4>
+
+          <i class="fa fa-question-circle" aria-hidden="true"></i>
+        </div>
+        <div class="flip-card-back">
+          <h5><em class="fa fa-check"></em>Unlimited advice and retirement planning help from from financial advisor
+          </h5>
+          <hr>
+          <h5><em class="fa fa-check"></em>A professionally managed ETF portfolio with reviews upon request</h5>
+          <hr>
+          <h5><em class="fa fa-check"></em>State-of-the-art digital tools</h5>
+          <h5><em class="fa-solid fa-badge-dollar"></em></h5>
+        </div>
       </div>
     </div>
-  </div>
   </div>
 
   <div class="col">
     <div class="flip-card">
       <div class="flip-card-inner">
         <div class="flip-card-front">
-          <h2 class="head_5">Private Client</h2><hr>
+          <h2 class="head_5">Wealth Management</h2>
+          <hr>
+          <h4 class="head_6">Over $200K to $1M investment assets</h4>
+          <i class="fa fa-question-circle" aria-hidden="true"></i>
+        </div>
+        <div class="flip-card-back">
+          <h5><em class="fa fa-check"></em>Two dedicated financial advisor</h5>
+          <hr>
+          <h5><em class="fa fa-check"></em>Specialists in real estate,stock option,and more</h5>
+          <hr>
+          <h5><em class="fa fa-check"></em>A customized portfolio with regular reviews</h5>
+          <hr>
+          <h5><em class="fa fa-check"></em>Tax optimization,thanks to individual stock investment</h5>
+          <hr>
+
+          <h5><em class="fa-solid fa-badge-dollar"></em></h5>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <h2 class="head_5">Private Client</h2>
+          <hr>
           <h4 class="head_6">Over $1M investment assets</h4>
           <i class="fa fa-question-circle" aria-hidden="true"></i>
         </div>
         <div class="flip-card-back">
-        <h5><em class="fa fa-check"></em>Two dedicated financial advisor</h5><hr>
-        <h5><em class="fa fa-check"></em>Priority access to our Specialists and investment commitees</h5><hr>
-        <h5><em class="fa fa-check"></em>In-depth specialist support for retirement and wealth planning</h5><hr>
-        <h5><em class="fa fa-check"></em>Private equity investment options</h5><hr>
+          <h5><em class="fa fa-check"></em>Two dedicated financial advisor</h5>
+          <hr>
+          <h5><em class="fa fa-check"></em>Priority access to our Specialists and investment commitees</h5>
+          <hr>
+          <h5><em class="fa fa-check"></em>In-depth specialist support for retirement and wealth planning</h5>
+          <hr>
+          <h5><em class="fa fa-check"></em>Private equity investment options</h5>
+          <hr>
         </div>
       </div>
     </div>
-    </div>
-  </div><br>
- 
+  </div>
+</div><br>
 
-  <div class="fees">
+
+<div class="fees">
   <div class="row">
     <div class="column">
       <h2 class="heading">Our Fee Structure</h2><br>
-      <p class="para">We charge one all-inclusive annual management fee at a fraction of the cost of traditional financial institutions. 
-        There are no hidden fees, no trailing fees and no trade commissions.</p><hr class="line"><br>
-        <button class="btn">Start Today</button>
+      <p class="para">We charge one all-inclusive annual management fee at a fraction of the cost of traditional
+        financial institutions.
+        There are no hidden fees, no trailing fees and no trade commissions.</p>
+      <hr class="line"><br>
+      <button class="btn">Start Today</button>
     </div>
     <div class="column">
-      <h3 class="heading">For Investment Services & Wealth Management Clients</h3><hr class="line">
-      <p class="para">First $1M&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <h3 class="heading">For Investment Services & Wealth Management Clients</h3>
+      <hr class="line">
+      <p class="para">First
+        $1M&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.79%</p><hr class="line">
-        <p class="para">Next $2M&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.69%</p><hr class="line">
-        <p class="para">Next $5M&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.59%</p><hr class="line">
-        <p class="para">Over $10M&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              &nbsp;&nbsp;&nbsp;0.49%</p><hr class="line">
-              <p class="para">Includes family tiered billing</p>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.79%</p>
+      <hr class="line">
+      <p class="para">Next
+        $2M&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.69%</p>
+      <hr class="line">
+      <p class="para">Next
+        $5M&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.59%</p>
+      <hr class="line">
+      <p class="para">Over
+        $10M&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;0.49%</p>
+      <hr class="line">
+      <p class="para">Includes family tiered billing</p>
     </div>
   </div>
 </div><br>
-  
+
 <div class="social">
   <h1><i class="fa fa-lightbulb-o" aria-hidden="true"></i></h1>
   <h1 class="social_1">Socially Responsible<br> Investing</h1><br><br>
@@ -255,92 +292,104 @@
   <button class="btn1">Learn More</button>
 </div>
 
-                            <!-- Footer -->
-<link href='//netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css' rel='stylesheet'/>
+<!-- Footer -->
+<link href='//netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css' rel='stylesheet' />
 <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
 <body>
-<hr class="hr-or">
-        <span class="span-or">or</span>
-<hr class="hr-or">
-<hr class="hr-or">
-<footer class="nb-footer">
-<div class="container">
-<div class="row">
-<div class="col-sm-12">
-<div class="about">
-  <img src="../../images/logop.png" class="img-responsive center-block" alt="" width="100px">
-<p>Any testimonial of advisory services are representative of the client’s views at the time it was collected. PCAC is a wholly owned subsidiary of Personal Capital Corporation ("PCC"), an Empower company. 
-  PCC is a wholly owned subsidiary of Empower Holdings, LLC. </p>
-  <div class="social-media">
-    <ul class="list-inline">
-      <li><a href="http://www.nextbootstrap.com/" title=""><em class="fa fa-facebook"></em></a></li>
-      <li><a href="http://www.nextbootstrap.com/" title=""><em class="fa fa-twitter"></em></a></li>
-      <li><a href="http://www.nextbootstrap.com/" title=""><em class="fa fa-google-plus"></em></a></li>
-      <li><a href="http://www.nextbootstrap.com/" title=""><em class="fa fa-linkedin"></em></a></li>
-    </ul>
-  </div>
-</div>
-</div>
+  <hr class="hr-or">
+  <span class="span-or">or</span>
+  <hr class="hr-or">
+  <hr class="hr-or">
+  <footer class="nb-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="about">
+            <img src="../../images/logop.png" class="img-responsive center-block" alt="" width="100px">
+            <p>Any testimonial of advisory services are representative of the client’s views at the time it was
+              collected. PCAC is a wholly owned subsidiary of Personal Capital Corporation ("PCC"), an Empower company.
+              PCC is a wholly owned subsidiary of Empower Holdings, LLC. </p>
+            <div class="social-media">
+              <ul class="list-inline">
+                <li><a href="http://www.nextbootstrap.com/" title=""><em class="fa fa-facebook"></em></a></li>
+                <li><a href="http://www.nextbootstrap.com/" title=""><em class="fa fa-twitter"></em></a></li>
+                <li><a href="http://www.nextbootstrap.com/" title=""><em class="fa fa-google-plus"></em></a></li>
+                <li><a href="http://www.nextbootstrap.com/" title=""><em class="fa fa-linkedin"></em></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
 
-<div class="col-md-3 col-sm-6">
-<div class="footer-info-single">
-  <h2 class="title">Help Center</h2>
-  <ul class="list-unstyled">
-    <li><a href="http://www.nextbootstrap.com/" title=""><em class="fa fa-angle-double-right"></em> How to Pay</a></li>
-    <li><a href="http://www.nextbootstrap.com/" title=""><em class="fa fa-angle-double-right"></em> FAQ's</a></li>
-    <li><a href="http://www.nextbootstrap.com/" title=""><em class="fa fa-angle-double-right"></em> Legal and disclosure</a></li>
-  </ul>
-</div>
-</div>
+        <div class="col-md-3 col-sm-6">
+          <div class="footer-info-single">
+            <h2 class="title">Help Center</h2>
+            <ul class="list-unstyled">
+              <li><a href="http://www.nextbootstrap.com/" title=""><em class="fa fa-angle-double-right"></em> How to
+                  Pay</a></li>
+              <li><a href="http://www.nextbootstrap.com/" title=""><em class="fa fa-angle-double-right"></em> FAQ's</a>
+              </li>
+              <li><a href="http://www.nextbootstrap.com/" title=""><em class="fa fa-angle-double-right"></em> Legal and
+                  disclosure</a></li>
+            </ul>
+          </div>
+        </div>
 
-<div class="col-md-3 col-sm-6">
-<div class="footer-info-single">
-  <h2 class="title">Customer information</h2>
-  <ul class="list-unstyled">
-    <li><a href="http://www.nextbootstrap.com/" title=""><em class="fa fa-angle-double-right"></em> About Us</a></li>
-    <li><a href="http://www.nextbootstrap.com/" title=""><em class="fa fa-angle-double-right"></em> FAQ's</a></li>
-    <li><a href="http://www.nextbootstrap.com/" title=""><em class="fa fa-angle-double-right"></em> Press</a></li>
-    <li><a href="http://www.nextbootstrap.com/" title=""><em class="fa fa-angle-double-right"></em> Affiliates</a></li>
-    <li><a href="http://www.nextbootstrap.com/" title=""><em class="fa fa-angle-double-right"></em> Career</a></li>
-  </ul>
-</div>
-</div>
+        <div class="col-md-3 col-sm-6">
+          <div class="footer-info-single">
+            <h2 class="title">Customer information</h2>
+            <ul class="list-unstyled">
+              <li><a href="http://www.nextbootstrap.com/" title=""><em class="fa fa-angle-double-right"></em> About
+                  Us</a></li>
+              <li><a href="http://www.nextbootstrap.com/" title=""><em class="fa fa-angle-double-right"></em> FAQ's</a>
+              </li>
+              <li><a href="http://www.nextbootstrap.com/" title=""><em class="fa fa-angle-double-right"></em> Press</a>
+              </li>
+              <li><a href="http://www.nextbootstrap.com/" title=""><em class="fa fa-angle-double-right"></em>
+                  Affiliates</a></li>
+              <li><a href="http://www.nextbootstrap.com/" title=""><em class="fa fa-angle-double-right"></em> Career</a>
+              </li>
+            </ul>
+          </div>
+        </div>
 
-<div class="col-md-3 col-sm-6">
-<div class="footer-info-single">
-  <h2 class="title">Security & privacy</h2>
-  <ul class="list-unstyled">
-    <li><a href="http://www.nextbootstrap.com/" title=""><em class="fa fa-angle-double-right"></em> Terms Of Use</a></li>
-    <li><a href="http://www.nextbootstrap.com/" title=""><em class="fa fa-angle-double-right"></em> Privacy Policy</a></li>
-    <p class="head_1">Invest with logic.
-      Plan with heart.™</p>
-  </ul>
-</div>
-</div>
+        <div class="col-md-3 col-sm-6">
+          <div class="footer-info-single">
+            <h2 class="title">Security & privacy</h2>
+            <ul class="list-unstyled">
+              <li><a href="http://www.nextbootstrap.com/" title=""><em class="fa fa-angle-double-right"></em> Terms Of
+                  Use</a></li>
+              <li><a href="http://www.nextbootstrap.com/" title=""><em class="fa fa-angle-double-right"></em> Privacy
+                  Policy</a></li>
+              <p class="head_1">Invest with logic.
+                Plan with heart.™</p>
+            </ul>
+          </div>
+        </div>
 
-<div class="col-md-3 col-sm-6">
-<div class="footer-info-single">
-  <h2 class="title">Payment</h2>
-  <p>Advisory services are offered for a fee by Personal Capital Advisors Corporation ("PCAC"),
-    a registered investment adviser with the Securities and Exchange Commission. 
-    Registration does not imply a certain level of skill or training. 
-    Investing involves risk. Past performance is not indicative of future returns.
-    You may lose money. All visuals are illustrative only.</p>
-  
-</div>
-</div>
-</div>
-</div>
+        <div class="col-md-3 col-sm-6">
+          <div class="footer-info-single">
+            <h2 class="title">Payment</h2>
+            <p>Advisory services are offered for a fee by Personal Capital Advisors Corporation ("PCAC"),
+              a registered investment adviser with the Securities and Exchange Commission.
+              Registration does not imply a certain level of skill or training.
+              Investing involves risk. Past performance is not indicative of future returns.
+              You may lose money. All visuals are illustrative only.</p>
 
-<section class="copyright">
-<div class="container">
-<div class="row">
-<div class="col-sm-6">
-<p>© 2022 Personal Capital Corporation, an Empower Company. All rights reserved</p>
-</div>
-<div class="col-sm-6"></div>
-</div>
-</div>
-</section>
-</footer>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="copyright">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-6">
+            <p>© 2022 Personal Capital Corporation, an Empower Company. All rights reserved</p>
+          </div>
+          <div class="col-sm-6"></div>
+        </div>
+      </div>
+    </section>
+  </footer>
 </body>
