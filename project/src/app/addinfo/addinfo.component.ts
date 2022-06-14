@@ -124,7 +124,7 @@ onSubmit(Formvalue: any) {
       this.router.navigate(['/addinfo'], )
 
   console.log("from form", Formvalue);
-  this.api.storeData(Formvalue,).subscribe((data) => {
+  this.api.storeData(Formvalue).subscribe((data) => {
   
    
     console.log("data returned from server", data);

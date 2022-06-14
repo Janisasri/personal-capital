@@ -33,7 +33,7 @@ constructor(
   }
   ngOnInit(): void {
     this.loginform = this.fb.group({
-      emailId: ['',[Validators.required,Validators.email]],
+      emailId: ['',[Validators.required,Validators.email,Validators.pattern("[A-Za-z0-9]*@gmail.com")]],
       Password: ['', [Validators.required,Validators.minLength(6),Validators.maxLength(40)]]
     });
   }

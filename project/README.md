@@ -77,7 +77,6 @@
 2. Bootstrap - 5.1.3
 3. ng2-search-filter -0.5.1
 4. ngx-toastr -13.2.1
-5. Angular material
 
 # BACKEND
 

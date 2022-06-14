@@ -50,7 +50,7 @@ export class StartedformComponent implements OnInit {
             Validators.maxLength(20)
           ]
         ],
-        email:['',[Validators.required,Validators.email]],
+        email:['',[Validators.required,Validators.email, Validators.pattern("[A-Za-z0-9]*@gmail.com")]],
         password:[
           '',
           [

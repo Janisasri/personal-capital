@@ -33,8 +33,7 @@ background: linear-gradient(180deg, rgba(28,27,33,0.9416141456582633) 0%, rgba(9
           </div>
           <div class="inputfield">
             <label for="Occupation">Occupation</label>
-            <input type="Occupation" class="form-control" id="Occupation" formControlName="Occupation"
-              name="Occupation">
+            <input type="text" class="form-control" id="Occupation" formControlName="Occupation" name="Occupation">
           </div>
           <div *ngIf="f.Occupation?.touched && f.Occupation?.invalid">
             <div *ngIf="f.Occupation.errors?.required" class="error"> Occupation is required.</div>
@@ -42,7 +41,7 @@ background: linear-gradient(180deg, rgba(28,27,33,0.9416141456582633) 0%, rgba(9
           </div>
           <div class="inputfield">
             <label for="NetWorth">Net worth</label>
-            <input type="NetWorth" class="form-control" id="NetWorth" formControlName="NetWorth" name="NetWorth">
+            <input type="text" class="form-control" id="NetWorth" formControlName="NetWorth" name="NetWorth">
           </div>
           <div *ngIf="f.NetWorth?.touched && f.NetWorth?.invalid">
             <div *ngIf="f.NetWorth.errors?.required" class="error"> NetWorth is required.</div>
@@ -50,8 +49,7 @@ background: linear-gradient(180deg, rgba(28,27,33,0.9416141456582633) 0%, rgba(9
           </div>
           <div class="inputfield">
             <label for="Retirement">Retirement Age</label>
-            <input type="RetirementAge" class="form-control" id="Retirement" formControlName="Retirement"
-              name="Retirement">
+            <input type="number" class="form-control" id="Retirement" formControlName="Retirement" name="Retirement">
           </div>
           <div *ngIf="f.Retirement?.touched && f.Retirement?.invalid">
             <div *ngIf="f.Retirement.errors?.required" class="error"> Retirement is required.</div>
