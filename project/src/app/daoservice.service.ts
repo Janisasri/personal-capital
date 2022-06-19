@@ -10,7 +10,6 @@ export class DaoserviceService {
   temp: any;
   userDataId:any;
   userId:any;
-  childId:any;
   id:any;
 
   pusharray: any = [];
