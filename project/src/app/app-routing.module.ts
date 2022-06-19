@@ -4,6 +4,7 @@ import { AddinfoComponent } from './addinfo/addinfo.component';
 import { AddinfoviewComponent } from './addinfoview/addinfoview.component';
 import { CarddetailsComponent } from './carddetails/carddetails.component';
 import { CardviewComponent } from './cardview/cardview.component';
+import { ChildbankComponent } from './childbank/childbank.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { DashboardcontentComponent } from './dashboardcontent/dashboardcontent.component';
 import { HomepageComponent } from './homepage/homepage.component';
@@ -11,7 +12,9 @@ import { InvesterComponent } from './invester/invester.component';
 import { InvestinfoComponent } from './investinfo/investinfo.component';
 import { LearnComponent } from './learn/learn.component';
 import { PlanviewComponent } from './planview/planview.component';
+import { PrimarybankComponent } from './primarybank/primarybank.component';
 import { SavingplannerComponent } from './savingplanner/savingplanner.component';
+import { ShowComponent } from './show/show.component';
 import { StartedformComponent } from './startedform/startedform.component';
 import { ViewdetailsComponent } from './viewdetails/viewdetails.component';
 
@@ -41,7 +44,12 @@ const routes: Routes = [
   { path:'information',component:DashboardcontentComponent},
   { path:'addview',component:AddinfoviewComponent},
   { path:'cardview',component:CardviewComponent},
-  { path:'planview',component:PlanviewComponent}
+  { path:'planview',component:PlanviewComponent},
+  { path:'Button',component:PrimarybankComponent},
+  { path:'offer',component:ChildbankComponent},
+  { path:'back',component:CarddetailsComponent},
+  { path:'backdetails',component:CarddetailsComponent},
+  { path:'show',component:ShowComponent}
 
 ];
 

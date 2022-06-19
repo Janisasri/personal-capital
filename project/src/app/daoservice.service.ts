@@ -8,9 +8,10 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 export class DaoserviceService {
   endpoint: string;
   temp: any;
-  userDataId:any
+  userDataId:any;
   userId:any;
-  id:any
+  childId:any;
+  id:any;
 
   pusharray: any = [];
   url = 'https://b4af4ef2-55e1-4a9b-9b02-8168e5964652-bluemix.cloudant.com/'
@@ -26,9 +27,7 @@ export class DaoserviceService {
   dataBaseName = "personal-capital"
    constructor(private http: HttpClient) {
     let userData:any =  localStorage.getItem('obj1') || '{}';
-    
-    
-   
+  
 
     if(userData == 'undefined' || userData == null){
      console.log("a");
@@ -36,6 +35,7 @@ export class DaoserviceService {
     else if(userData != undefined &&  userData != null ) {
       userData = JSON.parse(userData)
     this.userDataId =  userData['_id'];
+   
   }
    
   }
@@ -69,7 +69,6 @@ export class DaoserviceService {
       "AccountNumber": formData['AccountNumber'],
       "IFSCcode": formData['IFSCcode'],
       "AccountType": formData['AccountType'],
-      "Transferto":formData['Transferto'] ,
       "InvestingAmount": formData['InvestingAmount'],
       "PhoneNumber": formData['PhoneNumber'],
       "TypeYourOwn": formData['TypeYourOwn'],
@@ -94,6 +93,31 @@ export class DaoserviceService {
      
   }
   return this.http.post<any>(this.url +'personal-capital',data2,this.httpOptions)
+}
+childAdd(formData: any) {
+  console.log("From api", formData);
+  let data5 ={
+    "child": formData['child'],
+    "type": "childInfo",
+    "userInfo":this.userDataId
+   
+}
+return this.http.post<any>(this.url +'personal-capital',data5,this.httpOptions)
+}
+
+paymentAdd(formData: any) {
+  console.log("From api", formData);
+  let data3 ={
+    "cardHolder": formData['cardHolder'],
+    "year": formData['year'],
+    "month":formData['month'],
+    "cardNumber": formData['cardNumber'],
+    "cvc": formData['cvc'],
+    "type": "paymentInfo",
+    "userInfo":this.userDataId
+   
+}
+return this.http.post<any>(this.url +'personal-capital',data3,this.httpOptions)
 }
 
 

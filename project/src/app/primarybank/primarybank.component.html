@@ -1,0 +1,101 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
+<main class="page payment-page">
+    <section class="payment-form dark">
+        <div class="container">
+            <div class="block-heading">
+                <img src="../../images/capital1.png" width="200px" alt="img">
+                <h2>Welcome to CapitalOne</h2>
+                <p>Capital One is on a mission to help our customers succeed by bringing ingenuity, simplicity, and
+                    humanity to banking.</p>
+            </div>
+
+            <div class="products">
+                <h3 class="title">Proceed</h3>
+                <div class="item">
+                    <span class="price">$0.79%</span>
+                    <p class="item-name">Basic Plan</p>
+                    <p class="item-description">Unlimited Advice and Retirement Plans</p>
+                </div>
+                <div class="item">
+                    <span class="price">$0.69%</span>
+                    <p class="item-name">Pro Plan</p>
+                    <p class="item-description">Specialists in real-estate,stock Options And more</p>
+                </div>
+                <div class="item">
+                    <span class="price">$0.59%</span>
+                    <p class="item-name">Preminum Plan</p>
+                    <p class="item-description">Priority Access to our Specialists And investment Commitees</p>
+                </div>
+
+            </div>
+
+            <div class="card-details">
+                <h3 class="title">Card Details</h3>
+
+                <div class="row">
+                    <form [formGroup]="payment">
+                        <div class="inputfield col-sm-7">
+                            <label for="cardHolder">Card Holder</label>
+                            <input id="cardHolder" formControlName="cardHolder" type="text" class="form-control"
+                                placeholder="Card Holder" aria-label="Card Holder" aria-describedby="basic-addon1">
+                            <div *ngIf="f.cardHolder?.touched && f.cardHolder?.invalid">
+                                <div *ngIf="f.cardHolder.errors?.required" class="error"> cardHolder is required.</div>
+                                <div *ngIf="f.cardHolder.errors?.minlength">cardHolder should be character.</div>
+                            </div>
+                        </div>
+
+                        <div class="inputfield col-sm-5">
+                            <label for="month">Expiration Date</label>
+
+                            <input type="tel" class="form-control" id="month" formControlName="month" placeholder="MM"
+                                aria-label="MM" aria-describedby="basic-addon1">
+                            <span class="date-separator">/</span>
+                            <div *ngIf="f.month?.touched && f.month?.invalid">
+                                <div *ngIf="f.month.errors?.required" class="error"> month is required.</div>
+                                <div *ngIf="f.month.errors?.minlength">month should be character.</div>
+                            </div>
+                            <input type="tel" class="form-control" id="year" placeholder="YY" formControlName="year"
+                                aria-label="YY" aria-describedby="basic-addon1">
+
+                            <div *ngIf="f.year?.touched && f.year?.invalid">
+                                <div *ngIf="f.year.errors?.required" class="error"> year is required.</div>
+                                <div *ngIf="f.year.errors?.minlength">year should be character.</div>
+                            </div>
+                        </div>
+
+                        <div class="inputfield col-sm-8">
+                            <label for="cardNumber">Card Number</label>
+                            <input id="cardNumber" type="number" class="form-control" formControlName="cardNumber"
+                                placeholder="Card Number" aria-label="Card Holder" aria-describedby="basic-addon1">
+                            <div *ngIf="f.cardNumber?.touched && f.cardNumber?.invalid">
+                                <div *ngIf="f.cardNumber.errors?.required" class="error"> cardNumber is required.</div>
+                                <div *ngIf="f.cardNumber.errors?.minlength">cardNumber should be character.</div>
+                            </div>
+                        </div>
+
+                        <div class="inputfield col-sm-4">
+                            <label for="cvc">CVC</label>
+                            <input id="cvc" type="text" class="form-control" formControlName="cvc" placeholder="CVC"
+                                aria-label="Card Holder" aria-describedby="basic-addon1">
+                            <div *ngIf="f.cvc?.touched && f.cvc?.invalid">
+                                <div *ngIf="f.cvc.errors?.required" class="error"> cvc is required.</div>
+                                <div *ngIf="f.cvc.errors?.minlength">cvc should be character.</div>
+                            </div>
+                        </div><br>
+
+
+                        <div class="form-group col-sm-8">
+                            <button type="button" class="btn btn-primary btn-block"
+                                (click)="onSubmit(this.payment.value)">Proceed</button>
+                            <a href="offer" type="button" class="btn btn-primary btn-block">Offers</a>
+                            <a href="back" type="button" class="btn btn-primary btn-block">Back</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </section>
+</main>

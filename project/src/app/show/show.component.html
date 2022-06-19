@@ -14,7 +14,7 @@
             <div class="col-sm-12 col-md-12">
                 <div class="wpb_text_column wpb_content_element ">
                     <div class="wpb_wrapper">
-                        <div class="title-h1 text-center"><span><span class="light"> </span>YOUR BANK DETAILS
+                        <div class="title-h1 text-center"><span><span class="light"> </span>YOUR PRIMARY BANK DETAILS
                                 INFORMATION🙂</span></div>
 
                         <div class="title-h1 text-center"><span><span class="light">Explore More Of Our </span>
@@ -27,31 +27,34 @@
                         <div class="container1">
                             <table class="table table-striped table-dark"
                                 style="margin-left: auto; margin-right: auto;">
-                                <caption>CardDetails</caption>
+                                <caption>PrimaryBankDetails</caption>
                                 <thead>
                                     <tr>
-                                        <th scope="col">PayeeName</th>
-                                        <th scope="col">AccountNumber</th>
-                                        <th scope="col">IFSCcode</th>
-                                        <th scope="col">AccountType</th>
-                                        <th scope="col">InvestingAmount</th>
-                                        <th scope="col">PhoneNumber</th>
-                                        <th scope="col">TypeYourOwn</th>
+                                        <th scope="col">cardHolder</th>
+                                        <th scope="col">year</th>
+                                        <th scope="col">month</th>
+                                        <th scope="col">cardNumber</th>
+                                        <th scope="col">cvc</th>
+                                        <th scope="col">childInfo</th>
+
+
                                 </thead>
                                 <tbody>
                                     <tr *ngFor="let info of alluser">
-                                        <td>{{info.PayeeName}}</td>
-                                        <td>{{info.AccountNumber}}</td>
-                                        <td>{{info.IFSCcode}}</td>
-                                        <td>{{info.AccountType}}</td>
-                                        <td>{{info.InvestingAmount}}</td>
-                                        <td>{{info.PhoneNumber}}</td>
-                                        <td>{{info.TypeYourOwn}}</td>
+                                        <td>{{info.cardHolder}}</td>
+                                        <td>{{info.year}}</td>
+                                        <td>{{info.month}}</td>
+                                        <td>{{info.cardNumber}}</td>
+                                        <td>{{info.cvc}}</td>
+                                        <td>{{info.child}}</td>
+
+
+
 
 
                                     </tr>
 
                                 </tbody>
                             </table>
-                            <a href="show" class="btn">View BankDetails</a>
+
                         </div>

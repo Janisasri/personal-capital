@@ -31,9 +31,7 @@ export class LocationComponent implements OnInit {
   get Location() {
     return this.locationRecord.get('Location')!;
   }
-  get Pincode() {
-    return this.locationRecord.get('Pincode')!;
-  }
+  
   get f(): {[key:string]:AbstractControl}{
     return this.locationForm.controls;
    }

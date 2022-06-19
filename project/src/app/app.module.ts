@@ -26,6 +26,9 @@ import { NgxSpinnerModule } from 'ngx-spinner';
 import { AddinfoviewComponent } from './addinfoview/addinfoview.component';
 import { CardviewComponent } from './cardview/cardview.component';
 import { PlanviewComponent } from './planview/planview.component';
+import { PrimarybankComponent } from './primarybank/primarybank.component';
+import { ChildbankComponent } from './childbank/childbank.component';
+import { ShowComponent } from './show/show.component';
 
 
 @NgModule({
@@ -47,6 +50,9 @@ import { PlanviewComponent } from './planview/planview.component';
     AddinfoviewComponent,
     CardviewComponent,
     PlanviewComponent,
+    PrimarybankComponent,
+    ChildbankComponent,
+    ShowComponent,
     
    
   ],

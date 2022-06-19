@@ -22,7 +22,7 @@ export class CarddetailsComponent implements OnInit {
     AccountNumber:'',
     IFSCcode:'',
     AccountType:'',
-    Transferto:'',
+  
     InvestingAmount:'',
     PhoneNumber:'',
     TypeYourOwn:'',
@@ -43,7 +43,7 @@ export class CarddetailsComponent implements OnInit {
       AccountNumber:[this.cardrecord. AccountNumber],
       IFSCcode:[this.cardrecord.IFSCcode],
       AccountType:[this.cardrecord.AccountType],
-      Transferto:[this.cardrecord.Transferto],
+      
       InvestingAmount:[this.cardrecord.InvestingAmount],
       PhoneNumber:[this.cardrecord.PhoneNumber],
       TypeYourOwn:[this.cardrecord.TypeYourOwn],
@@ -69,7 +69,7 @@ export class CarddetailsComponent implements OnInit {
         AccountNumber: ['',Validators.required],
         IFSCcode: ['',Validators.required],
         AccountType: ['',Validators.required],
-        Transferto: ['',Validators.required],
+      
         InvestingAmount: ['',Validators.required],
         PhoneNumber: ['',Validators.required],
         TypeYourOwn: ['',Validators.required],
@@ -89,9 +89,7 @@ export class CarddetailsComponent implements OnInit {
   get AccountType() {
     return this.cardrecord.get('AccountType')!;
   }
-  get Transferto() {
-    return this.cardrecord.get('Transferto')!;
-  }
+  
   get InvestingAmount() {
     return this.cardrecord.get('InvestingAmount')!;
   }
@@ -114,7 +112,7 @@ export class CarddetailsComponent implements OnInit {
   this.api.addData(Formvalue).subscribe((data) => {
   console.log("data returned from server", data);
   this.toastr.success("Submitted,Click Next button");
-  this.cardDetails.reset();
+
    
 },
 err=>{
